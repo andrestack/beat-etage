@@ -17,7 +17,7 @@ cta:
   label: Termine & Buchung
   href: /kurse
 booking:
-  url: ""
+  url: https://www.eversports.de/scl/percussionstudio-beat-etage
   label: Termine & Buchung
 email: kontakt@beat-etage.de
 phone: 0163 5324200

@@ -25,8 +25,9 @@ German is the main site at `/`. English mirrors it under `/en`.
 | Components | `src/components/` |
 | Styles and design tokens | `src/styles/global.css` |
 | UI strings that aren't content (button labels, headings) | `src/lib/i18n.ts` |
-| Redirects from old WordPress URLs, security headers | `vercel.json` |
-| Design direction | `.taste-skill/direction.json` |
+| Redirects from old WordPress URLs | `redirects` in `astro.config.mjs` |
+| Security headers | `vercel.json` |
+| Design direction | `.taste-skill/direction.json` (its dealt navy and pink palette was replaced by the Roberta palette in `global.css`; the CSS wins) |
 
 ### The idea
 
@@ -42,7 +43,7 @@ German is the main site at `/`. English mirrors it under `/en`.
 
 ## Booking
 
-Bookings run through Eversports. Put the Eversports URL into Keystatic: **Einstellungen → Buchung**. Until it is set, the "Termine & Buchung" buttons on the floor pages open an email instead.
+Bookings run through Eversports. The "Termine & Buchung" buttons point at the studio calendar (`https://www.eversports.de/scl/percussionstudio-beat-etage`, taken from the old site's own links; Eversports blocks automated checks, so click it once to confirm). Change it in Keystatic under **Einstellungen → Buchung**. If the field is empty, the buttons open an email instead. Memberships and trial offers live at `https://www.eversports.de/sp/percussionstudio-beat-etage`.
 
 ## CMS on the live site (Keystatic GitHub mode)
 
@@ -76,11 +77,17 @@ Editors log in with their own GitHub account, which needs **write** access to th
 5. **Deploy hook:** in Vercel *Settings → Git → Deploy Hooks* create a hook `keystatic` for `main`. In GitHub *Settings → Secrets and variables → Actions* add its URL as the secret `VERCEL_DEPLOY_HOOK`. Treat the URL like a password.
 6. **Smoke test:** open `https://<project>.vercel.app/keystatic`, log in, change one word and save. A commit lands on `main` and a new deployment starts.
 7. **Domain:** add `beat-etage.de` (and `www`) in Vercel, then change the DNS at all-inkl. Add the second callback URL. Do this last.
+   - Change **only** the apex `A` record and the `www` `CNAME`, to the values Vercel shows.
+   - Leave the **MX, SPF, DKIM and other TXT records untouched**, and do not move the nameservers. `kontakt@beat-etage.de` is the contact address of the whole site and probably lives at all-inkl; moving the wrong record takes email down.
+   - Afterwards check two old URLs with and without a trailing slash (for example `/preise` and `/eltern-kind-session/`); each should redirect to the new page.
+8. **Hosting account:** Vercel Hobby is for non-commercial use. Decide which account and plan hosts this business site before launch, and make sure the Vercel data processing agreement mentioned in the Datenschutz applies to that account.
 
 ## Before going live
 
 - [ ] **Impressum and Datenschutz** are drafts written for a static site (no cookies, no tracking, Vercel as host). Nathan must read and confirm them. The address in the Impressum is his postal address from the old Impressum.
-- [ ] **Eversports URL** in the settings.
+- [ ] **Prices and dates:** confirm every price against what Nathan charges today. Two things go stale: the early-bird deadline (31.12.2026) and the Spring Camp dates (6–9 May 2027) on the Workshops floor.
+- [ ] **Eversports link:** click the calendar link once and confirm it opens the right studio.
+- [ ] **Keystatic admin:** run `npm run dev`, open `/keystatic`, check that images show in Startseite and an Etage, save one change and commit the normalised YAML before Nathan's first save.
 - [ ] **Balafon:** confirm it is currently offered. It is mentioned on the home page, in the team texts and in the camps.
 - [ ] **Teachers Janos and Leo:** add to "Team" once there are bios and photos.
 - [ ] **Halle 19 photos:** the contact page shows the old room at Bouchéstraße 75 with an honest caption. Replace it with a photo of the new room.
