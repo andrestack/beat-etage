@@ -1,0 +1,38 @@
+seo:
+  title: "Team: Die Lehrer:innen der Beat-Etage"
+  description: Nathan Berg, Toumany Fofana und Alex Streletz unterrichten in der Beat-Etage Djembe, Dunduns, Balafon, Handpan und Cajón.
+title: Die Lehrer:innen der Beat-Etage
+intro: Erfahrene Musiker:innen, die Spaß am Rhythmus weitergeben und für jede:n die richtige Balance zwischen Förderung und Forderung suchen.
+members:
+  - name: Nathan Berg
+    role: Gründer und Leiter · Djembe & Dunduns
+    bio: |-
+      Nathan studiert die Djembe- und Dundun-Musik seit 1999 und unterrichtet seit 2003. Er lebt in Berlin und ist Vater, Musiker, Rhythmustrainer und Kulturakteur.
+
+      Sein Fokus liegt auf dem Dorf-Stil der Djembe- und Dundun-Musik aus Hochguinea. Er versteht sich als Vermittler zwischen Meistertrommlern aus Guinea und Schüler:innen aus Europa.
+
+      In der Jugend begeisterte ihn der Musik- und Tanzstil der 90er-Hip-Hop-Kultur: Er war in Minden als Beatboxer, Breakdancer und Graffitikünstler aktiv. Als Psychologe und Coach beschäftigt er sich mit gruppendynamischen Prozessen und damit, wie Menschen am besten lernen.
+    image: ../../assets/media/de/team/members/0/image.jpg
+    link:
+      label: ""
+      href: ""
+  - name: Toumany Fofana
+    role: Djembe, Dunduns & Balafon · aus Guinea
+    bio: |-
+      Toumany ist in Faranah in Guinea geboren und hat mit seinem Vater, einem Sänger und Gitarristen, von klein auf die traditionellen Feste seiner Stadt erlebt. Sein erstes Instrument war die Djembe. Er spielt außerdem Dundun, Balafon und Schlagzeug.
+
+      In Conakry begleitete er viele Zeremonien als Trommler oder Sänger und ist Mitglied des Ballet Sembe Fonike. Er kennt das traditionelle Spiel der Dörfer Hochguineas ebenso wie das moderne Spiel der Hauptstadt. Seit 2017 lebt er in Berlin und ist für seinen energiereichen, frischen Unterrichtsstil beliebt.
+    image: ../../assets/media/de/team/members/1/image.jpg
+    link:
+      label: ""
+      href: ""
+  - name: Alex Streletz
+    role: Handpan & Cajón
+    bio: |-
+      Alex ist professioneller Multiinstrumentalist und unterrichtet seit 2007. Er spielt Handpan, Cajón, Tongue Drum, Gitarre und Flöte.
+
+      In seinem Gruppenunterricht geht es darum, Rhythmus und seine Struktur zu fühlen und zu verstehen, Patterns leicht und frei zu spielen und selbstbewusst zu improvisieren: strukturelles Rhythmusverständnis zusammen mit Flow und Gefühl.
+    image: ../../assets/media/de/team/members/2/image.jpg
+    link:
+      label: Alex auf Instagram
+      href: https://www.instagram.com/alex_streletz

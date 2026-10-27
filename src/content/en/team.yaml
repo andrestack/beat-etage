@@ -1,0 +1,38 @@
+seo:
+  title: "Team: the Beat-Etage teachers"
+  description: Nathan Berg, Toumany Fofana and Alex Streletz teach djembe, dunduns, balafon, handpan and cajón at Beat-Etage.
+title: The Beat-Etage teachers
+intro: Experienced musicians who pass on the joy of rhythm and look for the right balance of support and challenge for everyone.
+members:
+  - name: Nathan Berg
+    role: Founder and head · djembe & dunduns
+    bio: |-
+      Nathan has studied djembe and dundun music since 1999 and has taught since 2003. He lives in Berlin and is a father, musician, rhythm trainer and cultural actor.
+
+      His focus is the village style of djembe and dundun music from Upper Guinea. He sees himself as a mediator between master drummers from Guinea and students from Europe.
+
+      As a teenager he was drawn to the music and dance style of 90s hip hop culture and was active in Minden as a beatboxer, breakdancer and graffiti artist. As a psychologist and coach he works on group dynamics and on how people learn best.
+    image: ../../assets/media/en/team/members/0/image.jpg
+    link:
+      label: ""
+      href: ""
+  - name: Toumany Fofana
+    role: Djembe, dunduns & balafon · from Guinea
+    bio: |-
+      Toumany was born in Faranah, Guinea, and grew up at the traditional festivals of his town with his father, a singer and guitarist. His first instrument was the djembe. He also plays dundun, balafon and drum kit.
+
+      In Conakry he accompanied many ceremonies as a drummer or singer and is a member of the Ballet Sembe Fonike. He knows the traditional playing of the villages of Upper Guinea as well as the modern playing of the capital. He has lived in Berlin since 2017 and is loved for his energetic, fresh teaching style.
+    image: ../../assets/media/en/team/members/1/image.jpg
+    link:
+      label: ""
+      href: ""
+  - name: Alex Streletz
+    role: Handpan & cajón
+    bio: |-
+      Alex is a professional multi-instrumentalist and has taught since 2007. He plays handpan, cajón, tongue drum, guitar and flute.
+
+      In his group classes it is about feeling and understanding rhythm and its structure, playing patterns lightly and freely, and improvising with confidence: structural understanding of rhythm together with flow and feeling.
+    image: ../../assets/media/en/team/members/2/image.jpg
+    link:
+      label: Alex on Instagram
+      href: https://www.instagram.com/alex_streletz

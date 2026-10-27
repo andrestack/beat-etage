@@ -1,0 +1,73 @@
+seo:
+  title: "Beat-Etage: learn to drum in Berlin-Treptow"
+  description: "Percussion studio in Berlin-Treptow: djembe, dunduns, balafon, handpan and cajón. Classes, workshops, parent-and-child sessions and team drumming."
+hero:
+  title: Learn to drum in Berlin-Treptow
+  text: "Djembe, dunduns, balafon, handpan and cajón: classes, workshops and sessions for kids, teens and adults. No experience needed."
+  imageAlt: The Beat-Etage teachers with djembes, a cajón and a balafon
+  imageCaption: The Beat-Etage team
+  image: ../../assets/media/en/home/hero/image.jpg
+board:
+  title: Building directory
+  rows:
+    - label: Attic
+      title: About us & team
+      text: "Where it all began: Nathan, Toumany, Alex and the story behind the name."
+      price: ""
+      href: /team
+    - label: 3rd floor
+      title: Teams & events
+      text: Team drumming for companies, workshop projects for nurseries and schools, events for parties. At our place or yours.
+      price: on request
+      href: /teams
+    - label: 2nd floor
+      title: Workshops
+      text: Weekend workshops for djembe and dunduns, plus cajón and handpan. One day, one rhythm.
+      price: 2 hrs from €49
+      href: /workshops
+    - label: 1st floor
+      title: Adult classes
+      text: Weekly group classes on djembe and dunduns, in four levels.
+      price: Trial class from €10
+      href: /kurse
+    - label: Ground floor
+      title: Parents & kids
+      text: "A drum party for parents and kids: drumming, shakers, dancing, singing. No minimum age."
+      price: from €24 for 2 people
+      href: /kids
+    - label: Basement
+      title: Drum repair
+      text: Torn skin? Re-skinning and repair for djembes and dunduns.
+      price: price by effort
+      href: /trommelreparatur
+intro:
+  title: Rhythm that takes everyone along
+  note: "Here you can start without knowing how. Nathan and his team show you step by step how rhythm works: play first, then understand, then groove together."
+  facts:
+    - value: since 2003
+      text: Nathan has been teaching djembe and dunduns
+    - value: up to 14
+      text: people in an adult class
+    - value: from €10
+      text: is a trial class
+    - value: 50–120 min
+      text: per group class, depending on level
+tilesTitle: A different groove on every floor
+about:
+  title: Why “Etage”?
+  body: |-
+    It all began under the roof: Nathan gave his first drum lessons in an attic in his hometown. Hence the name (Etage means floor).
+
+    In Berlin the Beat-Etage moved into an old brick building on Bouchéstraße, a former girls’ school with very high ceilings and a stairwell that smells of stone. The building is now being fully renovated, so the Beat-Etage moved to Halle 19.
+
+    Nathan has been drumming since 1999 and teaching since 2003. As a teenager he was part of the hip hop scene in his hometown Minden: beatboxing, breakdance, graffiti. A first drum workshop became the start of a life with djembe and dunduns, with many workshops with the Konaté family and trips to Guinea.
+
+    As a psychologist and coach he is especially interested in what happens when a group makes rhythm together, and in the conditions under which people learn best. His teaching is clearly structured and didactically thought through.
+  imageAlt: Nathan Berg with a djembe on his shoulder
+  link:
+    label: More about the team
+    href: /team
+  image: ../../assets/media/en/home/about/image.jpg
+visit:
+  title: Visit us in Halle 19
+  text: Bouchéstraße 12, Entrance B, in Berlin-Treptow. The best way in is via Jordanstraße, where you can also park easily.

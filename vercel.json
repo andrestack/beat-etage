@@ -1,0 +1,45 @@
+{
+  "redirects": [
+    { "source": "/kurse-infos-und-uebersicht", "destination": "/kurse", "permanent": true },
+    { "source": "/anfaengerinnen", "destination": "/kurse", "permanent": true },
+    { "source": "/mittelstufe", "destination": "/kurse", "permanent": true },
+    { "source": "/fortgeschrittene", "destination": "/kurse", "permanent": true },
+    { "source": "/semi-profis", "destination": "/kurse", "permanent": true },
+    { "source": "/semi-profi-training", "destination": "/kurse", "permanent": true },
+    { "source": "/preise", "destination": "/kurse", "permanent": true },
+    { "source": "/eltern-kind-session", "destination": "/kids", "permanent": true },
+    { "source": "/preise-kids", "destination": "/kids", "permanent": true },
+    { "source": "/wb_kinder", "destination": "/kids", "permanent": true },
+    { "source": "/interactive-event_kinder", "destination": "/teams", "permanent": true },
+    { "source": "/ws_anfaengerinnen", "destination": "/workshops", "permanent": true },
+    { "source": "/ws-mittelstufe", "destination": "/workshops", "permanent": true },
+    { "source": "/fortgeschrittene-ws", "destination": "/workshops", "permanent": true },
+    { "source": "/preise-ws", "destination": "/workshops", "permanent": true },
+    { "source": "/ws-portugal", "destination": "/workshops", "permanent": true },
+    { "source": "/infos-workshop-buchen", "destination": "/workshops", "permanent": true },
+    { "source": "/geschenkgutscheine", "destination": "/workshops", "permanent": true },
+    { "source": "/wb_erwachsene", "destination": "/workshops", "permanent": true },
+    { "source": "/wb_jugendliche", "destination": "/workshops", "permanent": true },
+    { "source": "/teamentwicklung-erwachsene", "destination": "/teams", "permanent": true },
+    { "source": "/teamentwicklung-jugendliche", "destination": "/teams", "permanent": true },
+    { "source": "/interaktives_event_erwachsene", "destination": "/teams", "permanent": true },
+    { "source": "/auftritte", "destination": "/teams", "permanent": true },
+    { "source": "/coaching", "destination": "/teams", "permanent": true },
+    { "source": "/raum", "destination": "/kontakt", "permanent": true },
+    { "source": "/konzept", "destination": "/team", "permanent": true },
+    { "source": "/wirkung", "destination": "/team", "permanent": true },
+    { "source": "/instrumente-und-musik", "destination": "/team", "permanent": true },
+    { "source": "/debatte", "destination": "/", "permanent": true },
+    { "source": "/kundenliste", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/((?!keystatic|api/keystatic).*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}

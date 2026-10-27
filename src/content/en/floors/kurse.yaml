@@ -1,0 +1,40 @@
+title: Adult classes
+label: 1st floor
+seo:
+  title: "Drum classes for adults in Berlin: djembe & dunduns"
+  description: Weekly group classes on djembe and dunduns in Berlin-Treptow, in four levels. Trial class from €10.
+intro: "Every week, in a group of up to 14: you learn djembe and dunduns step by step, with joy in handmade rhythm and real understanding of the music."
+imageAlt: Toumany Fofana laughs and plays djembe in front of balafons and dunduns
+classes:
+  - name: Beginners
+    when: weekly · from 50 min
+    price: ""
+    note: A first feel for djembe and dundun music. You learn bass, tone and slap on simple rhythms and experience how the parts interlock in the group. It is not about playing everything exactly right away.
+  - name: Intermediate
+    when: weekly
+    price: ""
+    note: "Dive deeper: a bigger repertoire, more complex rhythms, more dynamic dunduns and djembe solo phrases with clear signals."
+  - name: Advanced
+    when: weekly
+    price: ""
+    note: "The character of Maninka rhythms: swing and feeling, improvisation and lively communication between djembe and dunduns."
+  - name: Semi-pro training
+    when: as announced · up to 120 min
+    price: ""
+    note: "For aspiring professionals: micro-timing, variations on the dunduns and the interplay of soloist, sangban and dundunba."
+body: |-
+  ## Prices
+
+  - Trial class from €10
+  - Single ticket from €20
+  - Membership from €55 a month
+  - Private lessons: 30 min = €30, 45 min = €45
+
+  The classes are led by experienced percussionists who care about the right balance of support and challenge. Private lessons are paid in cash or by bank transfer.
+
+  ## Handpan and cajón
+
+  Alex Streletz teaches group classes for handpan and cajón. More on the team page.
+ctaLabel: Dates & booking
+ctaHref: ""
+image: ../../../assets/media/en/floors/kurse/image.jpg

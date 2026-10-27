@@ -1,0 +1,26 @@
+---
+import Pic from './Pic.astro';
+import { md } from '../lib/md';
+interface Props { data: any; photo: { image: string; imageAlt: string; imageCaption: string } }
+const { data, photo } = Astro.props;
+---
+<section class="page-head">
+  <h1 data-reveal>{data.title}</h1>
+  <p data-reveal style="--d:90ms">{data.intro}</p>
+</section>
+<figure class="plate plate--short">
+  <Pic src={photo.image} alt={photo.imageAlt} sizes="100vw" class="plate__img" widths={[800, 1200, 1600, 1920]} />
+</figure>
+<section class="people">
+  {data.members.map((m: any, i: number) => (
+    <article class={`person ${i % 2 ? 'person--flip' : ''}`}>
+      <div class="person__pic" data-reveal><Pic src={m.image} alt={m.name} sizes="(min-width: 900px) 36vw, 100vw" /></div>
+      <div class="person__text">
+        <h2 data-reveal>{m.name}</h2>
+        <p class="person__role" data-reveal style="--d:60ms">{m.role}</p>
+        <div class="prose" data-reveal style="--d:120ms" set:html={md(m.bio)} />
+        {m.link?.href && <a class="link" href={m.link.href} rel="noopener" target="_blank" data-reveal>{m.link.label}<span aria-hidden="true">→</span></a>}
+      </div>
+    </article>
+  ))}
+</section>

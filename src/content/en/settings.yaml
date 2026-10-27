@@ -1,0 +1,42 @@
+siteName: Beat-Etage
+tagline: Percussion studio Berlin · handmade polyrhythm
+nav:
+  - label: Classes
+    href: /kurse
+  - label: Kids
+    href: /kids
+  - label: Workshops
+    href: /workshops
+  - label: Teams
+    href: /teams
+  - label: Team
+    href: /team
+  - label: Contact
+    href: /kontakt
+cta:
+  label: Dates & booking
+  href: /kurse
+booking:
+  url: ""
+  label: Dates & booking
+email: kontakt@beat-etage.de
+phone: 0163 5324200
+address:
+  - Percussionstudio Beat-Etage
+  - Bouchéstraße 12, Halle 19, Entrance B
+  - 12435 Berlin, Germany
+socials:
+  - label: Urban Sports Club
+    href: https://urbansportsclub.com/de/venues/percussionstudio-beat-etage
+  - label: Facebook
+    href: https://www.facebook.com/beat.etage
+  - label: YouTube
+    href: https://www.youtube.com/user/beatetageberlin
+legalLinks:
+  - label: Legal notice
+    href: /impressum
+  - label: Privacy
+    href: /datenschutz
+footerSignoff: Come by and drum with us.
+footerText: West African drums, balafon, handpan and cajón for kids, teens and adults, in Berlin-Treptow.
+imprint: © 2026 Nathan Berg · Percussionstudio Beat-Etage

@@ -1,0 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../lib/content';
+interface Props { src: string; alt: string; sizes?: string; loading?: 'lazy' | 'eager'; class?: string; widths?: number[] }
+const { src, alt, sizes = '100vw', loading = 'lazy', class: cls, widths = [480, 800, 1200, 1800] } = Astro.props;
+const meta = img(src)!;
+---
+<Image src={meta} alt={alt} widths={widths} sizes={sizes} loading={loading} class={cls} format="webp" />

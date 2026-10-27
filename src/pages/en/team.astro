@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import Team from '../../components/Team.astro';
+import { getSingleton } from '../../lib/content';
+const home = await getSingleton('home', 'en');
+const data = await getSingleton('team', 'en');
+---
+<Base locale='en' title={data.seo.title} description={data.seo.description}><Team data={data} photo={home.hero} /></Base>

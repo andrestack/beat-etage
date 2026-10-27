@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import Legal from '../../components/Legal.astro';
+import { getSingleton } from '../../lib/content';
+const data = await getSingleton('impressum', 'en');
+---
+<Base locale='en' title={`${data.title} · Beat-Etage`}><Legal data={data} /></Base>

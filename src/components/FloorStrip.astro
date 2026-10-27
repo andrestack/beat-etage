@@ -1,0 +1,23 @@
+---
+/* "Other floors": a row of photo tiles with a label strip, linking to the floor pages. */
+import Pic from './Pic.astro';
+import { href, type Locale } from '../lib/content';
+interface Props { floors: { slug: string; entry: any }[]; locale: Locale; title: string; exclude?: string }
+const { floors, locale, title, exclude } = Astro.props;
+const order = ['kurse', 'kids', 'workshops', 'teams', 'trommelreparatur'];
+const list = order.map((s) => floors.find((f) => f.slug === s)).filter((f) => f && f.slug !== exclude) as { slug: string; entry: any }[];
+---
+<section class="strip">
+  <h2 data-reveal>{title}</h2>
+  <div class="strip__grid">
+    {list.map((f, i) => (
+      <a class="tile" href={href(locale, `/${f.slug}`)} data-reveal style={`--d:${i * 70}ms`}>
+        <Pic src={f.entry.image} alt={f.entry.imageAlt} sizes="(min-width: 900px) 25vw, 100vw" class="tile__img" />
+        <span class="tile__strip">
+          <span class="tile__label">{f.entry.label}</span>
+          <span class="tile__name">{f.entry.title}</span>
+        </span>
+      </a>
+    ))}
+  </div>
+</section>

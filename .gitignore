@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.vercel/
+!.env.example
+
+# old-site scrape (contains payment details, never commit)
+reference/
+
+# design-skill screenshots
+.taste-skill/inspect*/

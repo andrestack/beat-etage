@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import Floor from '../../components/Floor.astro';
+import { getSingleton, getEntries } from '../../lib/content';
+export async function getStaticPaths() {
+  const floors = await getEntries('floors', 'en');
+  return floors.map((f) => ({ params: { floor: f.slug }, props: { data: f.entry, slug: f.slug } }));
+}
+const { data, slug } = Astro.props;
+const floors = await getEntries('floors', 'en');
+const settings = await getSingleton('settings', 'en');
+---
+<Base locale='en' title={data.seo.title} description={data.seo.description}><Floor data={data} settings={settings} floors={floors} slug={slug} locale='en' /></Base>

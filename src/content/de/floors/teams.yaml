@@ -1,0 +1,37 @@
+title: Teams & Events
+label: 3. OG
+seo:
+  title: Teamtrommeln & Events in Berlin
+  description: Teamentwicklung mit Trommeln für Firmen, Workshop-Projekte für Kitas und Schulen, interaktive Events und Auftritte in Berlin.
+intro: "Gemeinsam Rhythmus erschaffen: Teamtrommeln für Firmen, Workshop-Projekte für Kitas und Schulen, interaktive Events für Feste."
+imageAlt: Das Team der Beat-Etage mit Djembes, Cajón und Balafon
+classes:
+  - name: Teamtrommeln für Erwachsene
+    when: bei uns oder bei euch
+    price: auf Anfrage
+    note: Das Team wird in mindestens vier Gruppen geteilt, die erst getrennt üben und dann zusammenspielen. Instrumente bringen wir mit.
+  - name: Projekte für Kitas, Schulen und Jugendliche
+    when: nach Absprache
+    price: auf Anfrage
+    note: Workshop-Projekte für Kinder und Jugendliche, die tiefer in die Musik auf Djembes und Dunduns einsteigen.
+  - name: Interaktive Events
+    when: nach Absprache
+    price: auf Anfrage
+    note: "Für Firmenfeiern und Kinderfeste: alle trommeln mit."
+  - name: Auftritte
+    when: nach Absprache
+    price: auf Anfrage
+    note: Professionelle Trommel-Auftritte.
+body: |-
+  ## Warum Trommeln im Team?
+
+  Beim Trommeln spielt jede Person oder Kleingruppe einen einfachen Basisrhythmus, und erst im Zusammenspiel entsteht der volle Klang. Dabei geht es um aufeinander hören, zur richtigen Zeit seinen Teil beitragen und den Rhythmus der Gruppe spüren. Nathan Berg, Psychologe, Coach und Rhythmustrainer, macht diese Grundpfeiler der Zusammenarbeit trommelnd und mit viel Spaß erlebbar.
+
+  ## Die Trommeln kommen mit
+
+  Meist reisen die Instrumente per Lastenrad. Wird die Ladung größer, springt Roberta ein, der beige-gelbe VW-Bus der Beat-Etage.
+
+  Anfragen schickst du uns am besten per E-Mail mit den Eckdaten.
+ctaLabel: Anfrage per E-Mail
+ctaHref: mailto:kontakt@beat-etage.de?subject=Anfrage%20Teams%20%26%20Events
+image: ../../../assets/media/de/floors/teams/image.jpg

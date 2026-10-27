@@ -1,0 +1,29 @@
+---
+import { href, switchLocale, type Locale } from '../lib/content';
+import { bookingHref, isExternal } from '../lib/booking';
+import { t } from '../lib/i18n';
+interface Props { settings: any; locale: Locale }
+const { settings, locale } = Astro.props;
+const ui = t(locale);
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const other: Locale = locale === 'de' ? 'en' : 'de';
+const here = (h: string) => { const target = href(locale, h); return path === target || path.startsWith(target + '/'); };
+const book = settings.booking.url ? bookingHref(settings) : href(locale, settings.cta.href);
+---
+<header class="hdr">
+  <a class="hdr__brand" href={href(locale, '/')} aria-label={`${settings.siteName}: ${ui.home}`}>{settings.siteName}</a>
+  <nav class="hdr__nav" aria-label="Hauptnavigation">
+    {settings.nav.map((n: any) => (
+      <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
+    ))}
+  </nav>
+  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName}>{ui.langCode}</a>
+  <a class="btn" href={book} target={isExternal(book) && book.startsWith('http') ? '_blank' : undefined} rel={book.startsWith('http') ? 'noopener' : undefined}>{settings.cta.label}</a>
+  <details class="hdr__menu">
+    <summary>{ui.menu}</summary>
+    <div class="hdr__sheet">
+      {settings.nav.map((n: any) => <a href={href(locale, n.href)}>{n.label}</a>)}
+      <a href={switchLocale(path, other)} hreflang={other} lang={other}>{ui.langName}</a>
+    </div>
+  </details>
+</header>

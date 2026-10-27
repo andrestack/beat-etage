@@ -1,0 +1,28 @@
+---
+/* The Hausverzeichnis: the building's floor directory. Each floor is a <details>;
+   they share a name so opening one closes the others. Works without JavaScript. */
+import { href, type Locale } from '../lib/content';
+import { t } from '../lib/i18n';
+interface Props { data: { title: string; rows: any[] }; locale: Locale; open?: number }
+const { data, locale, open = 3 } = Astro.props;
+const ui = t(locale);
+---
+<section class="board" aria-labelledby="board-title">
+  <h2 id="board-title" class="board__title">{data.title}</h2>
+  <div class="board__rows">
+    {data.rows.map((r, i) => (
+      <details class="floor" name="board" open={i === open} data-reveal style={`--d:${i * 70}ms`}>
+        <summary>
+          <span class="floor__tab">{r.label}</span>
+          <span class="floor__name">{r.title}</span>
+          <span class="floor__plus" aria-hidden="true"></span>
+        </summary>
+        <div class="floor__body">
+          <p>{r.text}</p>
+          {r.price && <p class="floor__price">{r.price}</p>}
+          <a class="link" href={href(locale, r.href)}>{ui.toFloor}<span aria-hidden="true">→</span></a>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

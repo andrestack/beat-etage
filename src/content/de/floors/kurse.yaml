@@ -1,0 +1,40 @@
+title: Kurse für Erwachsene
+label: 1. OG
+seo:
+  title: "Trommelkurse für Erwachsene in Berlin: Djembe & Dunduns"
+  description: Wöchentliche Gruppenkurse auf Djembe und Dunduns in Berlin-Treptow, in vier Niveaus. Schnupper-Termin ab 10 €.
+intro: "Jede Woche, in der Gruppe, mit bis zu 14 Leuten: Du lernst Djembe und Dunduns Schritt für Schritt, mit Spaß am handgemachten Rhythmus und echtem Verständnis der Musik."
+imageAlt: Toumany Fofana lacht und spielt Djembe vor Balafons und Dunduns
+classes:
+  - name: Anfänger:innen
+    when: wöchentlich · ab 50 Min.
+    price: ""
+    note: Ein erstes Gespür für Djembe- und Dundun-Musik. Du lernst Bass, Ton und Slap an einfachen Rhythmen und erlebst, wie die Stimmen in der Gruppe ineinandergreifen. Es geht nicht darum, alles sofort exakt zu spielen.
+  - name: Mittelstufe
+    when: wöchentlich
+    price: ""
+    note: "Tiefer eintauchen: größeres Repertoire, komplexere Rhythmen, dynamischere Dunduns und Solophrasen an der Djembe mit klaren Signalen."
+  - name: Fortgeschrittene
+    when: wöchentlich
+    price: ""
+    note: "Die Eigenheiten der Maninka-Rhythmen: Swing und Feeling, Improvisation und lebendige Kommunikation zwischen Djembe und Dunduns."
+  - name: Semi-Profi-Training
+    when: nach Ankündigung · bis 120 Min.
+    price: ""
+    note: "Für angehende Profis: Mikrotiming, Variationen an den Dunduns und das Zusammenspiel von Solist, Sangban und Dundunba."
+body: |-
+  ## Preise
+
+  - Schnupper-Termin ab 10 €
+  - Einzelticket ab 20 €
+  - Membership ab 55 € im Monat
+  - Einzelunterricht: 30 Min. = 30 €, 45 Min. = 45 €
+
+  Die Kurse leiten erfahrene Percussionist:innen, denen eine angemessene Balance zwischen Förderung und Forderung wichtig ist. Einzelunterricht zahlst du bar oder per Überweisung.
+
+  ## Handpan und Cajón
+
+  Gruppenunterricht für Handpan und Cajón gibt Alex Streletz. Mehr dazu auf der Team-Seite.
+ctaLabel: Termine & Buchung
+ctaHref: ""
+image: ../../../assets/media/de/floors/kurse/image.jpg

@@ -1,0 +1,21 @@
+title: Drum repair
+label: Basement
+seo:
+  title: "Drum repair in Berlin: re-skinning djembe & dundun"
+  description: Torn skin? Professional re-skinning and repair of djembes and dunduns in Berlin-Treptow.
+intro: Torn skin? We re-skin djembes and dunduns and repair the body, rings and ropes.
+imageAlt: Close-up of a djembe skin at the playing edge
+classes:
+  - name: Re-skinning and repair
+    when: by arrangement
+    price: price by effort
+    note: "After a torn skin a full overhaul often makes sense: new skin, new ropes and rings."
+body: |-
+  ## What we do
+
+  We only use high-quality materials. Skins come in different patterns and thicknesses, to taste. An overhaul includes, where needed, rounding the playing edge and a fresh oiling of the wooden body.
+
+  The price depends on what has to be done to the instrument. The best way to start is a photo and a short description.
+ctaLabel: Repair enquiry
+ctaHref: mailto:kontakt@beat-etage.de?subject=Repair%20enquiry
+image: ../../../assets/media/en/floors/trommelreparatur/image.jpg

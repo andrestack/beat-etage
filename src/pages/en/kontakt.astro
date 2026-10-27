@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import Kontakt from '../../components/Kontakt.astro';
+import { getSingleton, getEntries } from '../../lib/content';
+const data = await getSingleton('kontakt', 'en');
+const floors = await getEntries('floors', 'en');
+const settings = await getSingleton('settings', 'en');
+---
+<Base locale='en' title={data.seo.title} description={data.seo.description}><Kontakt data={data} settings={settings} floors={floors} locale='en' /></Base>

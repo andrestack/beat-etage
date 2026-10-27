@@ -1,0 +1,81 @@
+---
+import Board from './Board.astro';
+import Pic from './Pic.astro';
+import { href, type Locale } from '../lib/content';
+import { md } from '../lib/md';
+interface Props { data: any; settings: any; floors: { slug: string; entry: any }[]; locale: Locale }
+const { data, settings, floors, locale } = Astro.props;
+const tel = settings.phone.replace(/[^\d+]/g, '').replace(/^0/, '+49');
+const bySlug = Object.fromEntries(floors.map((f) => [f.slug, f.entry]));
+const tileOrder = ['kurse', 'kids', 'workshops', 'teams', 'trommelreparatur'];
+const price = (slug: string) => data.board.rows.find((r: any) => r.href === `/${slug}`)?.price ?? '';
+const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label;
+---
+<section class="hero">
+  <h1 data-reveal>{data.hero.title}</h1>
+  <div class="hero__copy">
+    <p class="hero__text" data-reveal style="--d:90ms">{data.hero.text}</p>
+    <a class="btn btn--dark" href={href(locale, '/kurse')} data-reveal style="--d:180ms">{settings.cta.label}</a>
+  </div>
+  <Board data={data.board} locale={locale} />
+</section>
+
+<figure class="plate">
+  <Pic src={data.hero.image} alt={data.hero.imageAlt} sizes="100vw" loading="eager" class="plate__img" widths={[800, 1200, 1600, 1920]} />
+  <figcaption>{data.hero.imageCaption}</figcaption>
+</figure>
+
+<section class="intro">
+  <div class="intro__top">
+    <h2 data-reveal>{data.intro.title}</h2>
+    <p class="intro__note" data-reveal style="--d:90ms">{data.intro.note}</p>
+  </div>
+  <ul class="facts">
+    {data.intro.facts.map((f: any, i: number) => (
+      <li data-reveal style={`--d:${i * 70}ms`}><strong>{f.value}</strong><span>{f.text}</span></li>
+    ))}
+  </ul>
+</section>
+
+<section class="tiles">
+  <h2 data-reveal>{data.tilesTitle}</h2>
+  <div class="tiles__grid">
+    {tileOrder.map((slug, i) => {
+      const f = bySlug[slug];
+      return f && (
+        <a class={`tile tile--${i + 1}`} href={href(locale, `/${slug}`)} data-reveal style={`--d:${i * 70}ms`}>
+          <Pic src={f.image} alt={f.imageAlt} sizes="(min-width: 900px) 33vw, 100vw" class="tile__img" />
+          <span class="tile__strip">
+            <span class="tile__label">{f.label}</span>
+            <span class="tile__name">{f.title}</span>
+            <span class="tile__price">{price(slug)}</span>
+          </span>
+        </a>
+      );
+    })}
+  </div>
+</section>
+
+<section class="about">
+  <div class="about__pic" data-reveal>
+    <Pic src={data.about.image} alt={data.about.imageAlt} sizes="(min-width: 900px) 30vw, 80vw" />
+  </div>
+  <div class="about__text">
+    <h2 data-reveal>{data.about.title}</h2>
+    <div class="prose" data-reveal style="--d:90ms" set:html={md(data.about.body)} />
+    <a class="btn" href={href(locale, data.about.link.href)} data-reveal style="--d:140ms">{data.about.link.label}</a>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="visit__copy">
+    <h2 data-reveal>{data.visit.title}</h2>
+    <p data-reveal style="--d:90ms">{data.visit.text}</p>
+  </div>
+  <address class="card" data-reveal style="--d:140ms">
+    {settings.address.map((l: string) => <span>{l}</span>)}
+    <a href={`tel:${tel}`}>{settings.phone}</a>
+    <a href={`mailto:${settings.email}`}>{settings.email}</a>
+    <a class="btn btn--dark" href={href(locale, '/kontakt')}>{contactLabel}</a>
+  </address>
+</section>

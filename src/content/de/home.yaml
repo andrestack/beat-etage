@@ -1,0 +1,73 @@
+seo:
+  title: "Beat-Etage: Trommeln lernen in Berlin-Treptow"
+  description: "Percussionstudio in Berlin-Treptow: Djembe, Dunduns, Balafon, Handpan und Cajón. Kurse, Workshops, Eltern-Kind-Sessions und Teamtrommeln."
+hero:
+  title: Trommeln lernen in Berlin-Treptow
+  text: "Djembe, Dunduns, Balafon, Handpan und Cajón: Kurse, Workshops und Sessions für Kinder, Jugendliche und Erwachsene. Vorkenntnisse brauchst du keine."
+  imageAlt: Das Lehrer:innen-Team der Beat-Etage mit Djembes, Cajón und Balafon
+  imageCaption: Das Team der Beat-Etage
+  image: ../../assets/media/de/home/hero/image.jpg
+board:
+  title: Hausverzeichnis
+  rows:
+    - label: Dach
+      title: Über uns & Team
+      text: "Wo alles anfing: Nathan, Toumany, Alex und die Geschichte hinter dem Namen."
+      price: ""
+      href: /team
+    - label: 3. OG
+      title: Teams & Events
+      text: Teamtrommeln für Firmen, Workshop-Projekte für Kitas und Schulen, Events für Feste. Bei uns oder bei euch.
+      price: auf Anfrage
+      href: /teams
+    - label: 2. OG
+      title: Workshops
+      text: Wochenend-Workshops für Djembe und Dunduns, dazu Cajón und Handpan. Ein Tag, ein Rhythmus.
+      price: 2 Std. ab 49 €
+      href: /workshops
+    - label: 1. OG
+      title: Kurse für Erwachsene
+      text: Wöchentliche Gruppenkurse auf Djembe und Dunduns, in vier Niveaus.
+      price: Schnupper-Termin ab 10 €
+      href: /kurse
+    - label: EG
+      title: Eltern & Kinder
+      text: "Trommel-Party für Eltern und Kinder: trommeln, rasseln, tanzen, singen. Kein Mindestalter."
+      price: ab 24 € für 2 Personen
+      href: /kids
+    - label: Keller
+      title: Trommelreparatur
+      text: Fell gerissen? Neubespannung und Reparatur von Djembes und Dunduns.
+      price: Preis nach Aufwand
+      href: /trommelreparatur
+intro:
+  title: Rhythmus, der alle mitnimmt
+  note: "Bei uns darfst du anfangen, ohne es schon zu können. Nathan und sein Team zeigen dir Schritt für Schritt, wie Rhythmus funktioniert: erst spielen, dann verstehen, dann gemeinsam grooven."
+  facts:
+    - value: seit 2003
+      text: unterrichtet Nathan Djembe und Dunduns
+    - value: bis zu 14
+      text: Teilnehmer:innen pro Erwachsenenkurs
+    - value: ab 10 €
+      text: kostet der Schnupper-Termin
+    - value: 50–120 Min.
+      text: dauern die Gruppenkurse, je nach Niveau
+tilesTitle: Auf jeder Etage ein anderer Groove
+about:
+  title: Warum eigentlich Etage?
+  body: |-
+    Angefangen hat alles unterm Dach: Nathan gab seine ersten Trommelstunden in einem Dachgeschoss in seiner Heimatstadt. Daher der Name.
+
+    In Berlin zog die Beat-Etage in ein altes Backsteinhaus in der Bouchéstraße, eine ehemalige Mädchenschule mit sehr hohen Decken und einem Treppenhaus, das nach Stein riecht. Das Haus wird jetzt von Grund auf saniert. Deshalb ist die Beat-Etage in die Halle 19 umgezogen.
+
+    Nathan trommelt seit 1999 und unterrichtet seit 2003. Als Jugendlicher war er in der Hip-Hop-Szene seiner Heimatstadt Minden unterwegs: Beatboxen, Breakdance, Graffiti. Ein erster Trommel-Workshop wurde zum Startschuss für ein Leben mit Djembe und Dunduns, mit vielen Workshops bei der Familie Konaté und Reisen nach Guinea.
+
+    Als Psychologe und Coach interessiert ihn besonders, was entsteht, wenn eine Gruppe gemeinsam Rhythmus macht, und unter welchen Bedingungen Menschen am besten lernen. Sein Unterricht ist klar strukturiert und didaktisch durchdacht.
+  imageAlt: Nathan Berg mit einer Djembe auf der Schulter
+  link:
+    label: Mehr zum Team
+    href: /team
+  image: ../../assets/media/de/home/about/image.jpg
+visit:
+  title: Besuch uns in Halle 19
+  text: Bouchéstraße 12, Eingang B, in Berlin-Treptow. Am besten kommst du über die Jordanstraße, dort kannst du auch gut parken.

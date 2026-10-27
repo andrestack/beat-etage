@@ -1,0 +1,21 @@
+# Rebuilds the site on Vercel after every push to main, including Keystatic saves.
+# Vercel's Hobby plan blocks Git-triggered deploys of a private repo when the commit
+# author isn't the project owner, which is the case when the client saves in /keystatic.
+# A deploy hook isn't tied to a commit author, so this is how client saves deploy.
+# Does nothing until the VERCEL_DEPLOY_HOOK repo secret is set.
+name: Vercel deploy hook
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "VERCEL_DEPLOY_HOOK not set, skipping."; exit 0; fi
+          curl -fsS -X POST "$HOOK"

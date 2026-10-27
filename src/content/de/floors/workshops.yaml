@@ -1,0 +1,35 @@
+title: Workshops
+label: 2. OG
+seo:
+  title: "Trommel-Workshops in Berlin: Djembe, Cajón, Handpan"
+  description: "Wochenend-Workshops in Berlin-Treptow: Einführung in Djembe und Dunduns ab 49 €, Cajón und Handpan mit Alex, Djembe-Camps."
+intro: "Einen Tag lang eintauchen: Wochenend-Workshops für Djembe und Dunduns, dazu Cajón und Handpan, und Camps vor den Toren Berlins."
+imageAlt: Eine Hand liegt auf dem Fell einer Djembe
+classes:
+  - name: Einführung Djembe & Dunduns
+    when: ca. einmal im Monat · samstags 13–15 Uhr
+    price: 49 €
+    note: Zwei Stunden für Einsteiger:innen. Stornierung bis 3 Tage vor Beginn, weil die Plätze begrenzt sind.
+  - name: Einführung Cajón
+    when: samstags · 2 Std.
+    price: 50 € inkl. Cajón · 40 € mit eigenem
+    note: Mit Alex Streletz.
+  - name: Einführung Handpan
+    when: samstags · 2 Std.
+    price: 75 € inkl. Handpan · 60 € mit eigenem
+    note: Mit Alex Streletz.
+  - name: Fortgeschrittenen-Workshops
+    when: nach Ankündigung
+    price: auf Anfrage
+    note: Anmeldung und Infos direkt bei Nathan.
+  - name: Djembe-Camps
+    when: z. B. Frühlings-Camp 6.–9. Mai 2027
+    price: ""
+    note: 4 Tage Workshops für Djembe, Dunduns, Balafon und Tanz, rund 50 km außerhalb Berlins. Frühbucher-Rabatt bis 31.12.2026.
+body: |-
+  ## Geschenkgutscheine
+
+  Einen Einführungs-Workshop verschenken: für 1 Person 49 €, für 2 Personen 90 €, für 3 Personen 130 €, für 4 Personen 160 €. Per E-Mail oder Anruf bestellst du einen Gutschein zum Ausdrucken.
+ctaLabel: Termine & Buchung
+ctaHref: ""
+image: ../../../assets/media/de/floors/workshops/image.jpg

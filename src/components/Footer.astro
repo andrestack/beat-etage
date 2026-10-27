@@ -1,0 +1,27 @@
+---
+import { href, type Locale } from '../lib/content';
+import { t } from '../lib/i18n';
+interface Props { settings: any; locale: Locale }
+const { settings, locale } = Astro.props;
+const ui = t(locale);
+const tel = settings.phone.replace(/[^\d+]/g, '').replace(/^0/, '+49');
+---
+<footer class="ftr">
+  <div class="ftr__grid">
+    <div class="ftr__lead" data-reveal>
+      <p class="ftr__sign">{settings.footerSignoff}</p>
+      <p>{settings.footerText}</p>
+    </div>
+    <address class="ftr__addr" data-reveal style="--d:80ms">
+      {settings.address.map((l: string) => <span>{l}</span>)}
+      <a href={`mailto:${settings.email}`}>{settings.email}</a>
+      <a href={`tel:${tel}`}>{settings.phone}</a>
+    </address>
+    <ul class="ftr__links" data-reveal style="--d:160ms">
+      {settings.socials.map((s: any) => <li><a href={s.href} rel="noopener" target="_blank">{s.label}</a></li>)}
+      {settings.legalLinks.map((s: any) => <li><a href={href(locale, s.href)}>{s.label}</a></li>)}
+    </ul>
+  </div>
+  <p class="ftr__name" aria-hidden="true">{settings.siteName}</p>
+  <p class="ftr__imprint">{settings.imprint}</p>
+</footer>

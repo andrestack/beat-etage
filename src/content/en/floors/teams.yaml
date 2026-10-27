@@ -1,0 +1,37 @@
+title: Teams & events
+label: 3rd floor
+seo:
+  title: Team drumming & events in Berlin
+  description: Team development with drums for companies, workshop projects for nurseries and schools, interactive events and performances in Berlin.
+intro: "Create rhythm together: team drumming for companies, workshop projects for nurseries and schools, interactive events for parties."
+imageAlt: The Beat-Etage team with djembes, a cajón and a balafon
+classes:
+  - name: Team drumming for adults
+    when: at our place or yours
+    price: on request
+    note: The team is split into at least four groups that first practise separately and then play together. We bring the instruments.
+  - name: Projects for nurseries, schools and teens
+    when: by arrangement
+    price: on request
+    note: Workshop projects for kids and teens who want to go deeper into djembe and dundun music.
+  - name: Interactive events
+    when: by arrangement
+    price: on request
+    note: "For company parties and kids’ parties: everyone drums along."
+  - name: Performances
+    when: by arrangement
+    price: on request
+    note: Professional drum performances.
+body: |-
+  ## Why drum as a team?
+
+  In drumming every person or small group plays a simple base rhythm, and the full sound only appears when they play together. It is about listening to each other, contributing at the right time and feeling the rhythm of the group. Nathan Berg, psychologist, coach and rhythm trainer, makes these pillars of cooperation tangible through drumming and a lot of fun.
+
+  ## The drums travel with us
+
+  Usually the instruments travel by cargo bike. When the load gets bigger, Roberta steps in, the beige-and-yellow VW camper of the Beat-Etage.
+
+  The best way to ask is an email with the key details.
+ctaLabel: Request by email
+ctaHref: mailto:kontakt@beat-etage.de?subject=Enquiry%20teams%20%26%20events
+image: ../../../assets/media/en/floors/teams/image.jpg

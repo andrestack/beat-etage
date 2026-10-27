@@ -1,0 +1,35 @@
+title: Workshops
+label: 2nd floor
+seo:
+  title: "Drum workshops in Berlin: djembe, cajón, handpan"
+  description: "Weekend workshops in Berlin-Treptow: introduction to djembe and dunduns from €49, cajón and handpan with Alex, djembe camps."
+intro: "Dive in for a day: weekend workshops for djembe and dunduns, plus cajón and handpan, and camps just outside Berlin."
+imageAlt: A hand resting on the skin of a djembe
+classes:
+  - name: Introduction to djembe & dunduns
+    when: about once a month · Saturdays 1–3 pm
+    price: €49
+    note: Two hours for beginners. Cancellation up to 3 days before the start, because places are limited.
+  - name: Introduction to cajón
+    when: Saturdays · 2 hrs
+    price: €50 incl. cajón · €40 with your own
+    note: With Alex Streletz.
+  - name: Introduction to handpan
+    when: Saturdays · 2 hrs
+    price: €75 incl. handpan · €60 with your own
+    note: With Alex Streletz.
+  - name: Advanced workshops
+    when: as announced
+    price: on request
+    note: Sign-up and info directly with Nathan.
+  - name: Djembe camps
+    when: e.g. Spring Camp 6–9 May 2027
+    price: ""
+    note: 4 days of workshops for djembe, dunduns, balafon and dance, about 50 km outside Berlin. Early-bird discount until 31 Dec 2026.
+body: |-
+  ## Gift vouchers
+
+  Give an introductory workshop as a gift: €49 for 1 person, €90 for 2 people, €130 for 3 people, €160 for 4 people. Order a printable voucher by email or phone.
+ctaLabel: Dates & booking
+ctaHref: ""
+image: ../../../assets/media/en/floors/workshops/image.jpg

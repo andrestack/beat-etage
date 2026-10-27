@@ -1,0 +1,10 @@
+---
+/* Impressum / Datenschutz: title + rich text in two columns. */
+import { md } from '../lib/md';
+interface Props { data: any }
+const { data } = Astro.props;
+---
+<article class="legal">
+  <h1 data-reveal>{data.title}</h1>
+  <div class="prose prose--cols" set:html={md(data.body)} />
+</article>

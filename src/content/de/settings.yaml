@@ -1,0 +1,42 @@
+siteName: Beat-Etage
+tagline: Percussionstudio Berlin · handmade polyrhythm
+nav:
+  - label: Kurse
+    href: /kurse
+  - label: Kids
+    href: /kids
+  - label: Workshops
+    href: /workshops
+  - label: Teams
+    href: /teams
+  - label: Team
+    href: /team
+  - label: Kontakt
+    href: /kontakt
+cta:
+  label: Termine & Buchung
+  href: /kurse
+booking:
+  url: ""
+  label: Termine & Buchung
+email: kontakt@beat-etage.de
+phone: 0163 5324200
+address:
+  - Percussionstudio Beat-Etage
+  - Bouchéstraße 12, Halle 19, Eingang B
+  - 12435 Berlin
+socials:
+  - label: Urban Sports Club
+    href: https://urbansportsclub.com/de/venues/percussionstudio-beat-etage
+  - label: Facebook
+    href: https://www.facebook.com/beat.etage
+  - label: YouTube
+    href: https://www.youtube.com/user/beatetageberlin
+legalLinks:
+  - label: Impressum
+    href: /impressum
+  - label: Datenschutz
+    href: /datenschutz
+footerSignoff: Komm vorbei und trommel mit.
+footerText: Westafrikanische Trommeln, Balafon, Handpan und Cajón für Kinder, Jugendliche und Erwachsene, in Berlin-Treptow.
+imprint: © 2026 Nathan Berg · Percussionstudio Beat-Etage

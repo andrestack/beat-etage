@@ -1,0 +1,21 @@
+title: Trommelreparatur
+label: Keller
+seo:
+  title: "Trommelreparatur in Berlin: Neubespannung Djembe & Dundun"
+  description: Fell gerissen? Fachgerechte Neubespannung und Reparatur von Djembes und Dunduns in Berlin-Treptow.
+intro: Fell gerissen? Wir bespannen Djembes und Dunduns neu und reparieren Korpus, Ringe und Schnüre.
+imageAlt: Nahaufnahme eines Djembe-Fells am Spielrand
+classes:
+  - name: Neubespannung und Reparatur
+    when: nach Absprache
+    price: Preis nach Aufwand
+    note: "Bei einem Fellriss bietet sich oft eine Generalüberholung an: neues Fell, neue Schnüre und Ringe."
+body: |-
+  ## Was wir machen
+
+  Wir verwenden nur hochwertige Materialien. Felle gibt es in verschiedenen Mustern und Stärken, je nach Geschmack. Zur Generalüberholung gehören bei Bedarf eine Abrundung der Spielkante und eine frische Ölung des Holzkorpus.
+
+  Der Preis hängt davon ab, was am Instrument gemacht werden muss. Schick uns am besten ein Foto und eine kurze Beschreibung.
+ctaLabel: Reparaturanfrage
+ctaHref: mailto:kontakt@beat-etage.de?subject=Reparaturanfrage
+image: ../../../assets/media/de/floors/trommelreparatur/image.jpg
