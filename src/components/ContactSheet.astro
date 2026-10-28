@@ -1,0 +1,65 @@
+---
+/* Contact sheet: one tall photo frame per offering, side by side. The first frame is open by
+   default; hovering or focusing another widens it. The yellow streak runs behind the frames and
+   shows through the gaps. Stacks on mobile. Works without JavaScript.
+   Usage: <ContactSheet rows={data.board.rows} floors={floors} locale={locale} /> */
+import Pic from './Pic.astro';
+import { href, type Locale } from '../lib/content';
+interface Props { rows: any[]; floors: { slug: string; entry: any }[]; locale: Locale; order?: string[] }
+const { rows, floors, locale, order = ['kurse', 'kids', 'workshops', 'teams', 'trommelreparatur'] } = Astro.props;
+const bySlug = Object.fromEntries(floors.map((f) => [f.slug, f.entry]));
+const rowBySlug = Object.fromEntries(rows.map((r) => [r.href.replace(/^\//, ''), r]));
+// Where each photo is cropped inside its narrow frame (object-position).
+const crop: Record<string, string> = {
+  kurse: '50% 28%', kids: '50% 30%', workshops: '30% 50%', teams: '55% 42%', trommelreparatur: '40% 50%',
+};
+const frames = order.filter((s) => bySlug[s] && rowBySlug[s]).map((s, i) => ({ slug: s, n: String(i + 1).padStart(2, '0'), floor: bySlug[s], row: rowBySlug[s] }));
+---
+<section class="sheet">
+  <div class="sheet__strip">
+    {frames.map((f) => (
+      <a class="sheet__frame" href={href(locale, f.row.href)} style={`--pos:${crop[f.slug] ?? '50% 40%'}`}>
+        <Pic src={f.floor.image} alt={f.floor.imageAlt} sizes="(min-width: 760px) 40vw, 100vw" class="sheet__img" widths={[480, 800, 1200]} />
+        <span class="sheet__no" aria-hidden="true">{f.n}</span>
+        <span class="sheet__cap">
+          <strong>{f.row.title}</strong>
+          <span class="sheet__more">
+            <span class="sheet__text">{f.row.text}</span>
+            {f.row.price && <span class="sheet__price">{f.row.price}</span>}
+          </span>
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .sheet { position: relative; padding: 0 var(--m) var(--m); }
+  .sheet::before { content: ''; position: absolute; left: 0; right: 0; top: 30%; height: 34%; background: var(--yellow); }
+  .sheet__strip { position: relative; display: flex; gap: clamp(8px, 1vw, 14px); height: min(60vh, 560px); min-height: 360px; }
+  .sheet__frame { position: relative; flex: 1; min-width: 0; overflow: hidden; background: var(--ink); color: #fff; text-decoration: none; transition: flex 0.55s var(--ease); }
+  .sheet__frame :global(.sheet__img) { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: var(--pos); transition: transform 0.8s var(--ease); }
+  .sheet__frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 16, 10, 0.82), rgba(20, 16, 10, 0) 52%); }
+  .sheet__strip:not(:has(.sheet__frame:hover, .sheet__frame:focus-visible)) .sheet__frame:first-child,
+  .sheet__frame:hover, .sheet__frame:focus-visible { flex: 3.2; }
+  .sheet__frame:hover :global(.sheet__img), .sheet__frame:focus-visible :global(.sheet__img) { transform: scale(1.05); }
+  .sheet__frame:focus-visible { outline: 4px solid var(--ink); outline-offset: 3px; }
+  .sheet__no { position: absolute; z-index: 2; top: 12px; left: 14px; font-size: var(--step-small); font-weight: 600; letter-spacing: 0.12em; color: var(--yellow); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
+  .sheet__cap { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: clamp(14px, 1.6vw, 22px); display: grid; gap: 0.3rem; }
+  .sheet__cap strong { font-weight: 600; font-size: clamp(1.05rem, 0.8rem + 0.8vw, 1.8rem); line-height: 1.02; letter-spacing: -0.02em; hyphens: auto; overflow-wrap: anywhere; }
+  .sheet__more { display: grid; gap: 0.35rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s, opacity 0.4s 0.1s; }
+  .sheet__strip:not(:has(.sheet__frame:hover, .sheet__frame:focus-visible)) .sheet__frame:first-child .sheet__more,
+  .sheet__frame:hover .sheet__more, .sheet__frame:focus-visible .sheet__more { max-height: 9rem; opacity: 1; }
+  .sheet__text { font-size: var(--step-small); line-height: 1.35; max-width: 34ch; }
+  .sheet__price { justify-self: start; font-size: var(--step-small); font-weight: 600; background: var(--yellow); color: var(--ink); padding: 4px 10px; }
+
+  @media (max-width: 760px) {
+    .sheet::before { display: none; }
+    .sheet__strip { flex-direction: column; height: auto; min-height: 0; }
+    .sheet__frame, .sheet__strip:not(:has(.sheet__frame:hover, .sheet__frame:focus-visible)) .sheet__frame:first-child, .sheet__frame:hover, .sheet__frame:focus-visible { flex: none; height: 220px; }
+    .sheet__more { max-height: 9rem; opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sheet__frame, .sheet__frame :global(.sheet__img), .sheet__more { transition: none; }
+  }
+</style>
