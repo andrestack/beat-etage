@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beat-Etage – Percussionstudio Berlin</title>
+  <meta name="description" content="Wir trommeln gerade an einer neuen Website! Bei Fragen einfach Nathan anrufen: 0163 5324 200.">
+  <meta property="og:title" content="Beat-Etage – Percussionstudio Berlin">
+  <meta property="og:description" content="Wir trommeln gerade an einer neuen Website! Bei Fragen einfach Nathan anrufen: 0163 5324 200.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/hanken-grotesk-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face { font-family: 'Hanken Grotesk'; font-weight: 400; font-display: swap; src: url(/hanken-grotesk-latin-400-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Hanken Grotesk'; font-weight: 800; font-display: swap; src: url(/hanken-grotesk-latin-800-normal.woff2) format('woff2'); }
+    :root { --bg: #e9e0cc; --ink: #1e1a14; --soft: #4a4234; --yellow: #f5b800; }
+    * { box-sizing: border-box; margin: 0; }
+    html { overflow-x: hidden; background: var(--bg); color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+    body { min-height: 100svh; display: flex; flex-direction: column; align-items: center; padding: 24px 16px 40px; gap: clamp(20px, 4vw, 40px); }
+    .lang { align-self: flex-end; display: flex; gap: 4px; }
+    .lang button { font: 800 0.875rem/1 "Hanken Grotesk", system-ui, sans-serif; letter-spacing: 0.08em; padding: 10px 14px; min-width: 44px; min-height: 44px; border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+    .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    .lang button:focus-visible, .tel:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .logo { width: min(320px, 70vw); height: auto; }
+    .streak { align-self: stretch; margin-inline: -16px; background: var(--yellow); padding: clamp(28px, 5vw, 56px) 16px; text-align: center; }
+    h1 { font-weight: 800; font-size: clamp(2.2rem, 0.6rem + 6.4vw, 5.5rem); line-height: 1.02; letter-spacing: -0.02em; max-width: 16ch; margin-inline: auto; text-wrap: balance; }
+    .sub { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); line-height: 1.45; max-width: 34ch; text-align: center; text-wrap: balance; }
+    .tel { display: inline-block; margin-top: 8px; font-weight: 800; font-size: clamp(1.5rem, 1.1rem + 2vw, 2.5rem); color: var(--ink); text-decoration-thickness: 4px; text-decoration-color: var(--yellow); text-underline-offset: 6px; white-space: nowrap; }
+    .roberta { width: min(440px, 100%); height: auto; border-bottom: 10px solid var(--yellow); margin-top: auto; }
+    [data-lang="en"] [lang="de"], [data-lang="de"] [lang="en"] { display: none; }
+  </style>
+</head>
+<body data-lang="de">
+  <div class="lang" role="group" aria-label="Sprache / Language">
+    <button type="button" data-set="de" aria-pressed="true">DE</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </div>
+
+  <img class="logo" src="/logo.png" width="500" height="206" alt="Beat-Etage – Percussionstudio, handmade polyrhythm">
+
+  <div class="streak">
+    <h1 lang="de">Wir trommeln gerade an einer neuen Website!</h1>
+    <h1 lang="en">We are drumming up a new website. Stay tuned!</h1>
+  </div>
+
+  <main>
+    <p class="sub" lang="de">Bei Fragen einfach Nathan anrufen:<br><a class="tel" href="tel:+491635324200">0163 5324 200</a></p>
+    <p class="sub" lang="en">If you have any questions, give Nathan a call on<br><a class="tel" href="tel:+491635324200">0163 5324 200</a></p>
+  </main>
+
+  <img class="roberta" src="/roberta.jpg" width="508" height="414" alt="Roberta, Nathans beiger VW-Bus mit gelbem Streifen" loading="lazy">
+
+  <script>
+    (function () {
+      var body = document.body, btns = document.querySelectorAll('[data-set]');
+      function set(l) {
+        body.dataset.lang = l;
+        document.documentElement.lang = l;
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+        try { localStorage.setItem('lang', l); } catch (e) {}
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+      var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+      if (saved) set(saved);
+      else if (!/^de/i.test(navigator.language || 'de')) set('en');
+    })();
+  </script>
+</body>
+</html>
