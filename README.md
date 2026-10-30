@@ -31,7 +31,9 @@ German is the main site at `/`. English mirrors it under `/en`.
 
 ### The idea
 
-*"Etage" means floor.* The home page is the building's floor directory (the **Hausverzeichnis**): every offer lives on its own floor, from the attic (about us) to the basement (drum repair). Each floor is one Keystatic entry in "Etagen". The directory rows on the home page are edited in "Startseite → Etagen-Tafel".
+*"Etage" means floor:* Nathan first taught in an attic in his hometown, hence the name. That story stays ("Warum eigentlich Etage?" on the home page). The earlier floor-directory layout (Dach, 3. OG … Keller, "Hausverzeichnis") was our invention, not Nathan's, and was dropped on 30.10.2026. Offers are still stored as Keystatic entries under "Angebote" (internally the `floors` collection; route keys unchanged). Their old "Etage" field is now the **sticker**: a short fact stuck on the photo ("Wöchentlich", "Kein Mindestalter"). `Board.astro` is no longer used.
+
+The look is a **collage**, like the noticeboard on the studio door: photos slightly tilted with a strip of tape on top, round stickers on the corners, facts as coloured notes, text pinned on rounded cards over acoustic foam.
 
 ### Design rules
 
@@ -39,6 +41,7 @@ German is the main site at `/`. English mirrors it under `/en`.
 - Rounded corners everywhere (`--r`, `--r-sm`, pills for labels). This deliberately sets it apart from teambeat, which is square.
 - Acoustic foam from the studio walls (`--foam`) is a background texture for coloured fields (visit, call to action). Text never sits directly on foam: put it on a rounded Naturweiß card, like a note pinned to the studio door.
 - One typeface, Hanken Grotesk, self-hosted through `@fontsource` (no requests to Google; this matters for GDPR).
+- Collage tilts use the CSS `rotate` property scaled by `--k` (smaller on phones), so they never fight the reveal motion's `transform`. Photo frames don't clip (the radius sits on the img) so the tape can overlap the edge.
 - No shadows. No icons in boxes.
 - No cookies, no analytics, no third-party embeds. Keep it that way, or update the Datenschutz text.
 - Photos need descriptive `alt` text (Keystatic field "Bildbeschreibung").
@@ -94,7 +97,7 @@ Editors log in with their own GitHub account, which needs **write** access to th
 - [ ] **Teachers Janos and Leo:** add to "Team" once there are bios and photos.
 - [ ] **Halle 19 photos:** the contact page shows the old room at Bouchéstraße 75 with an honest caption. Replace it with a photo of the new room.
 - [ ] **Photos from the old site:** the teachers and team photos come from the old site (the ones without text baked in). The photo of a child with Nathan (Eltern & Kinder) should be confirmed with the parents.
-- [ ] **Floor tabs:** "Dach", "3. OG" and so on are a playful numbering. Rename in Keystatic if Nathan prefers.
+- [ ] **Stickers and tagline:** Nathan should check the sticker texts on each offer and the line "Rhythmus · Gemeinschaft · Begegnung" under the hero.
 - [ ] **Roberta:** she appears on the "Teams & Events" floor ("Die Trommeln kommen mit"). Nathan should check the wording.
 - [ ] **Redirects:** `vercel.json` maps the old WordPress URLs to the new pages. Check the important ones after the domain moves.
 

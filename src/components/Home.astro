@@ -15,6 +15,7 @@ const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label
     <figure class="hero__pic" data-reveal>
       <Pic src={data.hero.image} alt={data.hero.imageAlt} sizes="(min-width: 900px) 58vw, 100vw" loading="eager" class="hero__img" widths={[800, 1200, 1600, 1920]} />
       {data.hero.imageCaption && <figcaption class="pill">{data.hero.imageCaption}</figcaption>}
+      {price('kurse') && <a class="hero__sticker" href={href(locale, '/kurse')}>{price('kurse')}</a>}
     </figure>
     <div class="hero__copy">
       <h1 data-reveal>{data.hero.title}</h1>
@@ -30,7 +31,7 @@ const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label
     <h2 data-reveal>{data.intro.title}</h2>
     <p class="intro__note" data-reveal style="--d:90ms">{data.intro.note}</p>
   </div>
-  <ul class="facts">
+  <ul class="facts collage">
     {data.intro.facts.map((f: any, i: number) => (
       <li data-reveal style={`--d:${i * 70}ms`}><strong>{f.value}</strong><span>{f.text}</span></li>
     ))}
@@ -45,8 +46,8 @@ const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label
       return f && (
         <a class={`tile tile--${i + 1}`} href={href(locale, `/${slug}`)} data-reveal style={`--d:${i * 70}ms`}>
           <Pic src={f.image} alt={f.imageAlt} sizes="(min-width: 900px) 33vw, 100vw" class="tile__img" />
+          {f.label && <span class="sticker" aria-hidden="true">{f.label}</span>}
           <span class="tile__strip">
-            <span class="tile__label">{f.label}</span>
             <span class="tile__name">{f.title}</span>
             <span class="tile__price">{price(slug)}</span>
           </span>

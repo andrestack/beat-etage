@@ -71,16 +71,16 @@ function build() {
             title: fields.text({ label: 'Überschrift der Tafel' }),
             rows: fields.array(
               fields.object({
-                label: fields.text({ label: 'Etage (z. B. EG, 1. OG)' }),
+                label: fields.text({ label: 'Nicht mehr angezeigt (leer lassen)' }),
                 title: fields.text({ label: 'Name' }),
                 text: fields.text({ label: 'Text', multiline: true }),
                 price: fields.text({ label: 'Preis / Info (kurz)' }),
                 href: fields.text({ label: 'Link' }),
               }),
-              { label: 'Etagen', itemLabel: (p) => `${p.fields.label.value} · ${p.fields.title.value}` },
+              { label: 'Angebote', itemLabel: (p) => p.fields.title.value },
             ),
           },
-          { label: 'Etagen-Tafel' },
+          { label: 'Angebote (Preise auf den Startseiten-Kacheln)' },
         ),
         intro: fields.object(
           {
@@ -151,7 +151,7 @@ function build() {
 
   const floorSchema = {
     title: fields.slug({ name: { label: 'Name' } }),
-    label: fields.text({ label: 'Etage (z. B. 1. OG)' }),
+    label: fields.text({ label: 'Sticker (kurz, z. B. Wöchentlich)' }),
     seo,
     intro: fields.text({ label: 'Einleitung', multiline: true }),
     image: img('Bild'),
@@ -191,7 +191,7 @@ for (const { code, label } of LOCALES) {
   IMG_DIR = `src/assets/media/${code}/floors`;
   IMG_PUB = `../../../assets/media/${code}/floors/`;
   collections[`floors_${code}`] = collection({
-    label: `Etagen (${label})`,
+    label: `Angebote (${label})`,
     slugField: 'title',
     path: `src/content/${code}/floors/*`,
     format: { data: 'yaml' },

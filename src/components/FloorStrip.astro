@@ -13,8 +13,8 @@ const list = order.map((s) => floors.find((f) => f.slug === s)).filter((f) => f 
     {list.map((f, i) => (
       <a class="tile" href={href(locale, `/${f.slug}`)} data-reveal style={`--d:${i * 70}ms`}>
         <Pic src={f.entry.image} alt={f.entry.imageAlt} sizes="(min-width: 900px) 25vw, 100vw" class="tile__img" />
+        {f.entry.label && <span class="sticker" aria-hidden="true">{f.entry.label}</span>}
         <span class="tile__strip">
-          <span class="tile__label">{f.entry.label}</span>
           <span class="tile__name">{f.entry.title}</span>
         </span>
       </a>

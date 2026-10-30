@@ -281,13 +281,74 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   @keyframes drift { from { transform: scale(1.12) translateY(-3%); } to { transform: scale(1) translateY(3%); } }
 }
 
+/* ---------- collage: photos pinned up like on the studio door ----------
+   Tilts use the `rotate` property, so they don't fight the reveal motion's `transform`.
+   Tape sits on top of a photo, so photo frames don't clip (the radius lives on the img).
+   --k scales every tilt (smaller on phones). */
+:root { --k: 1; --tape: rgb(220 201 165 / 0.82); }
+body { overflow-x: clip; }
+
+.tile, .about__pic, .fl__pic, .person__pic, .contact__pic, .hero__pic { overflow: visible; border-radius: 0; background: none; position: relative; }
+.tile .tile__img, .about__pic img, .fl__pic img, .person__pic img, .contact__pic img, .hero__img { border-radius: var(--r); }
+.tile .tile__img { border-radius: var(--r) var(--r) 0 0; }
+.tile__strip { border-radius: 0 0 var(--r) var(--r); }
+
+/* tape strip across the top edge */
+.tile::before, .about__pic::before, .fl__pic::before, .person__pic::before, .contact__pic::before {
+  content: ''; position: absolute; z-index: 3; top: -12px; left: 50%; width: clamp(72px, 9vw, 120px); height: 28px;
+  background: var(--tape); translate: -50% 0; rotate: calc(-4deg * var(--k));
+}
+.tile:nth-child(3n+2)::before { left: 22%; rotate: calc(5deg * var(--k)); }
+.tile:nth-child(3n)::before { left: 76%; rotate: calc(-7deg * var(--k)); }
+
+/* tilts */
+.tile { rotate: calc(-1.4deg * var(--k)); transition: rotate 0.35s var(--ease), translate 0.35s var(--ease); }
+.tile:nth-child(3n+2) { rotate: calc(1.1deg * var(--k)); }
+.tile:nth-child(3n) { rotate: calc(-0.6deg * var(--k)); }
+.tile:nth-child(4n) { rotate: calc(1.8deg * var(--k)); }
+.tile:hover, .tile:focus-visible { rotate: 0deg; translate: 0 -6px; }
+.tile:hover .tile__img { transform: none; }
+.about__pic { rotate: calc(-2.2deg * var(--k)); }
+.fl__pic { rotate: calc(1.6deg * var(--k)); }
+.person__pic { rotate: calc(-1.8deg * var(--k)); }
+.person--flip .person__pic { rotate: calc(2deg * var(--k)); }
+.contact__pic { rotate: calc(1.2deg * var(--k)); }
+.hero__pic { rotate: calc(0.8deg * var(--k)); }
+.tiles__grid, .strip__grid { row-gap: calc(var(--gap) * 1.6); }
+
+/* stickers: short facts slapped on a photo corner */
+.sticker, .fl__label {
+  position: absolute; z-index: 4; top: 18px; right: -10px; padding: 9px 16px; border-radius: 999px;
+  background: var(--yellow); color: var(--ink); font-weight: 600; font-size: var(--step-small); line-height: 1.1;
+  rotate: calc(5deg * var(--k)); max-width: 70%; text-align: center;
+}
+.tile:nth-child(3n+2) .sticker { background: var(--sage); rotate: calc(-4deg * var(--k)); }
+.tile:nth-child(3n) .sticker { background: var(--bg); }
+.fl__label { left: auto; right: -14px; top: 28px; font-size: var(--step-body); padding: 12px 22px; rotate: calc(-5deg * var(--k)); }
+.hero__sticker {
+  position: absolute; z-index: 4; top: -18px; left: -22px; width: clamp(104px, 10vw, 140px); aspect-ratio: 1;
+  display: grid; place-items: center; padding: 14px; border-radius: 50%; text-align: center; text-decoration: none;
+  background: var(--yellow); color: var(--ink); font-weight: 600; font-size: var(--step-small); line-height: 1.15;
+  rotate: calc(-10deg * var(--k)); transition: rotate 0.35s var(--ease);
+}
+.hero__sticker:hover { rotate: 0deg; }
+
+/* facts as notes: coloured cards, each a little off-square */
+.collage li { padding: clamp(18px, 2vw, 28px); border-radius: var(--r); background: var(--surface); rotate: calc(-1.5deg * var(--k)); }
+.collage li:nth-child(2) { background: var(--yellow); rotate: calc(1.2deg * var(--k)); translate: 0 14px; }
+.collage li:nth-child(3) { background: var(--sage); rotate: calc(-0.8deg * var(--k)); }
+.collage li:nth-child(4) { background: var(--bg); outline: 2px solid var(--surface); rotate: calc(1.8deg * var(--k)); translate: 0 8px; }
+.collage li span { color: var(--ink); }
+
 /* ---------- phone and tablet ---------- */
 @media (max-width: 1100px) {
   .hdr__nav { gap: 18px; }
   .hdr .btn { display: none; }
 }
 @media (max-width: 900px) {
-  :root { --header: 64px; }
+  :root { --header: 64px; --k: 0.55; }
+  .hero__sticker { top: -12px; left: auto; right: -6px; }
+  .sticker, .fl__label { right: -4px; }
   .hdr__nav, .hdr__lang { display: none; }
   .hdr__menu { display: block; }
   .hero, .intro__top, .cta, .page-head, .fl, .person, .contact, .room, .ftr__grid, .about { display: block; }

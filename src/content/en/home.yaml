@@ -9,34 +9,34 @@ hero:
   image: ../../assets/media/en/home/hero/image.jpg
   tagline: "Rhythm · Community · Connection"
 board:
-  title: Building directory
+  title: What we offer
   rows:
-    - label: Attic
+    - label: ""
       title: About us & team
       text: "Where it all began: Nathan, Toumany, Alex and the story behind the name."
       price: ""
       href: /team
-    - label: 3rd floor
+    - label: ""
       title: Teams & events
       text: Team drumming for companies, workshop projects for nurseries and schools, events for parties. At our place or yours.
       price: on request
       href: /teams
-    - label: 2nd floor
+    - label: ""
       title: Workshops
       text: Weekend workshops for djembe and dunduns, plus cajón and handpan. One day, one rhythm.
       price: 2 hrs from €49
       href: /workshops
-    - label: 1st floor
+    - label: ""
       title: Adult classes
       text: Weekly group classes on djembe and dunduns, in four levels.
       price: Trial class from €10
       href: /kurse
-    - label: Ground floor
+    - label: ""
       title: Parents & kids
       text: "A drum party for parents and kids: drumming, shakers, dancing, singing. No minimum age."
       price: from €24 for 2 people
       href: /kids
-    - label: Basement
+    - label: ""
       title: Drum repair
       text: Torn skin? Re-skinning and repair for djembes and dunduns.
       price: price by effort
@@ -53,7 +53,7 @@ intro:
       text: is a trial class
     - value: 50–120 min
       text: per group class, depending on level
-tilesTitle: A different groove on every floor
+tilesTitle: Pick your groove
 about:
   title: Why “Etage”?
   body: |-

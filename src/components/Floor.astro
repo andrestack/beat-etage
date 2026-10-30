@@ -18,7 +18,7 @@ const ext = cta.startsWith('http');
     <a class="btn btn--dark" href={cta} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} data-reveal style="--d:210ms">{data.ctaLabel}</a>
   </div>
   <div class="fl__pic" data-reveal style="--d:120ms">
-    <p class="fl__label">{data.label}</p>
+    {data.label && <p class="fl__label">{data.label}</p>}
     <Pic src={data.image} alt={data.imageAlt} sizes="(min-width: 900px) 50vw, 100vw" loading="eager" widths={[600, 900, 1200, 1600]} />
   </div>
 </section>

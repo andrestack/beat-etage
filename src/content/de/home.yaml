@@ -9,34 +9,34 @@ hero:
   image: ../../assets/media/de/home/hero/image.jpg
   tagline: "Rhythmus · Gemeinschaft · Begegnung"
 board:
-  title: Hausverzeichnis
+  title: Angebote
   rows:
-    - label: Dach
+    - label: ""
       title: Über uns & Team
       text: "Wo alles anfing: Nathan, Toumany, Alex und die Geschichte hinter dem Namen."
       price: ""
       href: /team
-    - label: 3. OG
+    - label: ""
       title: Teams & Events
       text: Teamtrommeln für Firmen, Workshop-Projekte für Kitas und Schulen, Events für Feste. Bei uns oder bei euch.
       price: auf Anfrage
       href: /teams
-    - label: 2. OG
+    - label: ""
       title: Workshops
       text: Wochenend-Workshops für Djembe und Dunduns, dazu Cajón und Handpan. Ein Tag, ein Rhythmus.
       price: 2 Std. ab 49 €
       href: /workshops
-    - label: 1. OG
+    - label: ""
       title: Kurse für Erwachsene
       text: Wöchentliche Gruppenkurse auf Djembe und Dunduns, in vier Niveaus.
       price: Schnupper-Termin ab 10 €
       href: /kurse
-    - label: EG
+    - label: ""
       title: Eltern & Kinder
       text: "Trommel-Party für Eltern und Kinder: trommeln, rasseln, tanzen, singen. Kein Mindestalter."
       price: ab 24 € für 2 Personen
       href: /kids
-    - label: Keller
+    - label: ""
       title: Trommelreparatur
       text: Fell gerissen? Neubespannung und Reparatur von Djembes und Dunduns.
       price: Preis nach Aufwand
@@ -53,7 +53,7 @@ intro:
       text: kostet der Schnupper-Termin
     - value: 50–120 Min.
       text: dauern die Gruppenkurse, je nach Niveau
-tilesTitle: Auf jeder Etage ein anderer Groove
+tilesTitle: Such dir deinen Groove aus
 about:
   title: Warum eigentlich Etage?
   body: |-
