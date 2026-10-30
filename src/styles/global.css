@@ -2,14 +2,24 @@
 @import '@fontsource/hanken-grotesk/latin-500.css';
 @import '@fontsource/hanken-grotesk/latin-600.css';
 
-/* Beat-Etage. Palette is Roberta's: a beige VW camper with a yellow streak.
-   One ground (beige), one ink, one accent (yellow). Surfaces differ by a step in tone. */
+/* Beat-Etage. Nathan's palette (Oct 2026): warm natural white, light pine, soft ochre,
+   drum brown, muted sage, dark walnut. Walnut is the text colour on every field.
+   --yellow is kept as the name of the accent so components don't change; it is the ochre. */
 :root {
-  --bg: #e9e0cc;
-  --surface: #ddd2b8;
-  --ink: #1e1a14;
-  --soft: #4a4234;
-  --yellow: #f5b800;
+  --bg: #f5f0e6;      /* Warmes Naturweiß */
+  --surface: #dcc9a5; /* Helles Fichtenholz */
+  --yellow: #d9b65d;  /* Sanftes Ockergelb */
+  --brown: #936a4d;   /* Natürliches Trommelbraun: large type and shapes only (4.2:1 on white) */
+  --sage: #a5ae91;    /* Gedämpftes Salbeigrün: dots and shapes, never text */
+  --ink: #40362f;     /* Dunkles Walnussholz */
+  --soft: #6e4f39;    /* darker drum brown, safe for small text on white and pine */
+
+  --r: clamp(16px, 1.6vw, 28px);
+  --r-sm: 12px;
+
+  /* Acoustic foam from the studio walls: a pyramid tile shaded in white and black,
+     laid over whatever background colour the element has. */
+  --foam: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cpath d='M0 0h44L22 22z' fill='%23fff' fill-opacity='.22'/%3E%3Cpath d='M0 0l22 22L0 44z' fill='%23000' fill-opacity='.05'/%3E%3Cpath d='M44 0v44L22 22z' fill='%23000' fill-opacity='.13'/%3E%3Cpath d='M0 44h44L22 22z' fill='%23000' fill-opacity='.2'/%3E%3C/svg%3E");
 
   --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
@@ -60,6 +70,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   min-height: 52px; padding: 0 28px;
   background: var(--yellow); color: var(--ink);
   font: 600 var(--step-body)/1 inherit; text-decoration: none; white-space: nowrap;
+  border-radius: var(--r-sm);
   transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 .btn:hover { transform: translateY(-3px); background: var(--ink); color: var(--bg); }
@@ -77,8 +88,8 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   height: var(--header); padding: 0 var(--m);
   background: var(--bg);
 }
-.hdr__brand { font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.03em; text-decoration: none; margin-right: auto; }
-.hdr__nav { display: flex; gap: 28px; font-weight: 500; }
+.hdr__brand { font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.01em; text-transform: uppercase; text-decoration: none; margin-right: auto; }
+.hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
 .hdr__lang { font-weight: 600; text-decoration: none; padding: 6px 4px; }
@@ -87,7 +98,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .hdr__menu summary::-webkit-details-marker { display: none; }
 .hdr__sheet {
   position: fixed; left: 0; right: 0; top: var(--header); background: var(--yellow);
-  display: grid; padding: 12px var(--m) 28px;
+  display: grid; padding: 12px var(--m) 28px; border-radius: 0 0 var(--r) var(--r);
 }
 .hdr__sheet a { font-size: var(--step-lead); font-weight: 500; text-decoration: none; padding: 12px 0; }
 
@@ -95,19 +106,25 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease) var(--d, 0ms), transform 0.8s var(--ease) var(--d, 0ms); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
 
-/* ---------- hero: yellow field, the directory board on it ---------- */
-.hero {
-  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); row-gap: clamp(28px, 3.4vw, 56px); align-items: start;
-  padding: clamp(32px, 4vw, 72px) var(--m) clamp(56px, 6vw, 104px);
-  background: var(--yellow);
+/* ---------- hero: Nathan's mockup. A pine panel with the photo and the headline in it,
+   a tagline with a sage dot underneath. ---------- */
+.hero { padding: clamp(12px, 2vw, 32px) var(--m) clamp(40px, 5vw, 80px); }
+.hero__panel {
+  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: center;
+  padding: clamp(16px, 2vw, 32px); background: var(--surface); border-radius: calc(var(--r) * 1.4);
 }
-.hero h1 { grid-column: 1 / 13; }
-.hero__copy { grid-column: 1 / 7; display: grid; gap: 28px; justify-items: start; }
+.hero__pic { grid-column: 6 / 13; grid-row: 1; position: relative; overflow: hidden; border-radius: var(--r); }
+.hero__img { width: 100%; height: min(72vh, 680px); object-fit: cover; object-position: 50% 20%; }
+.pill { position: absolute; left: 16px; bottom: 16px; padding: 8px 16px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: var(--step-small); font-weight: 600; }
+.hero__copy { grid-column: 1 / 6; grid-row: 1; display: grid; gap: 28px; justify-items: start; padding: clamp(8px, 2vw, 32px); }
+.hero h1 { font-size: clamp(2.5rem, 1rem + 4.2vw, 5.5rem); font-weight: 600; line-height: 1; letter-spacing: -0.035em; }
 .hero__text { font-size: var(--step-lead); line-height: 1.3; max-width: 30ch; }
-.board { grid-column: 7 / 13; background: var(--bg); padding: clamp(20px, 2.2vw, 32px); }
+.hero__tag { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-left: 4px; font-size: var(--step-lead); color: var(--soft); }
+.hero__tag::before { content: ''; width: 0.8em; height: 0.8em; border-radius: 50%; background: var(--sage); flex: none; }
+.board { background: var(--bg); padding: clamp(20px, 2.2vw, 32px); border-radius: var(--r); }
 .board__title, .prose h2, .ftr h2 { font-size: var(--step-lead); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 18px; line-height: 1.1; }
 .board__rows { display: grid; gap: 6px; }
-.floor { background: var(--surface); }
+.floor { background: var(--surface); border-radius: var(--r-sm); overflow: hidden; }
 .floor summary {
   display: grid; grid-template-columns: 104px 1fr 56px; align-items: center; min-height: 62px;
   list-style: none; cursor: pointer;
@@ -143,7 +160,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .tiles { padding: 0 var(--m) var(--section); }
 .tiles h2 { margin-bottom: clamp(32px, 4vw, 56px); max-width: 16ch; }
 .tiles__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--gap); }
-.tile { display: block; overflow: hidden; text-decoration: none; grid-column: span 2; }
+.tile { display: block; overflow: hidden; text-decoration: none; grid-column: span 2; border-radius: var(--r); }
 .tile--4, .tile--5 { grid-column: span 3; }
 .tile__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; transition: transform 0.9s var(--ease); }
 .tile--4 .tile__img, .tile--5 .tile__img { aspect-ratio: 16 / 9; }
@@ -160,19 +177,21 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: start;
   padding: var(--section) var(--m); background: var(--ink); color: var(--bg);
 }
-.about__pic { grid-column: 1 / 5; position: sticky; top: calc(var(--header) + 24px); }
+.about__pic { grid-column: 1 / 5; position: sticky; top: calc(var(--header) + 24px); border-radius: var(--r); overflow: hidden; }
 .about__text { grid-column: 6 / 13; display: grid; gap: 32px; justify-items: start; max-width: 760px; }
 .about .btn:hover { background: var(--bg); color: var(--ink); }
 .about a { text-decoration-color: var(--yellow); }
 
-/* ---------- visit: yellow field with the address card ---------- */
+/* ---------- visit: the studio door. Ochre foam with the address pinned on it like a note ---------- */
 .visit {
   display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: end;
-  padding: var(--section) var(--m); background: var(--yellow);
+  padding: var(--section) var(--m); background: var(--yellow) var(--foam);
 }
-.visit__copy { grid-column: 1 / 7; display: grid; gap: 24px; }
+.visit__copy { grid-column: 1 / 7; display: grid; gap: 24px; justify-items: start; }
+.visit__copy > * { background: var(--bg); padding: 18px 24px; border-radius: var(--r); }
+.visit__copy h2 { padding: 22px 28px; }
 .visit__copy p { font-size: var(--step-lead); line-height: 1.3; max-width: 28ch; }
-.card { grid-column: 8 / 13; display: grid; gap: 8px; justify-items: start; padding: clamp(24px, 3vw, 40px); background: var(--bg); font-size: var(--step-lead); line-height: 1.25; letter-spacing: -0.02em; }
+.card { grid-column: 8 / 13; display: grid; gap: 8px; justify-items: start; padding: clamp(24px, 3vw, 40px); background: var(--bg); font-size: var(--step-lead); line-height: 1.25; letter-spacing: -0.02em; border-radius: var(--r); transform: rotate(-1.2deg); }
 .card a:not(.btn) { text-decoration-color: var(--yellow); text-decoration-thickness: 0.14em; }
 .card .btn { margin-top: 16px; font-size: var(--step-body); }
 .card--plain { grid-column: auto; background: var(--surface); margin-top: 32px; }
@@ -182,14 +201,14 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .fl { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: center; padding-top: clamp(48px, 6vw, 96px); padding-bottom: var(--section); }
 .fl__copy { grid-column: 1 / 7; display: grid; gap: 28px; justify-items: start; }
 .fl__pic { position: relative; }
-.fl__label { position: absolute; left: 0; top: 0; z-index: 1; background: var(--yellow); padding: 16px 24px; font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1; }
+.fl__label { position: absolute; left: 16px; top: 16px; z-index: 1; background: var(--yellow); padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1; }
 .fl__intro { font-size: var(--step-lead); line-height: 1.3; max-width: 32ch; }
-.fl__pic { grid-column: 7 / 13; overflow: hidden; }
+.fl__pic { grid-column: 7 / 13; overflow: hidden; border-radius: var(--r); }
 .fl__pic img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 28%; }
 .offers { padding: 0 var(--m) var(--section); }
 .offers h2 { margin-bottom: clamp(28px, 3.5vw, 48px); }
 .offers__list { display: grid; gap: 8px; }
-.offer { display: grid; grid-template-columns: 6fr 3fr 3fr; gap: var(--gap); align-items: start; padding: clamp(20px, 2.4vw, 32px); background: var(--surface); }
+.offer { display: grid; grid-template-columns: 6fr 3fr 3fr; gap: var(--gap); align-items: start; padding: clamp(20px, 2.4vw, 32px); background: var(--surface); border-radius: var(--r); }
 .offer__main { display: grid; gap: 10px; }
 .offer__main p { max-width: 56ch; }
 .offer__when { font-weight: 500; }
@@ -197,10 +216,10 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .more { padding: 0 var(--m) var(--section); }
 .cta {
   display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); row-gap: 24px; align-items: start;
-  padding: var(--section) var(--m); background: var(--yellow);
+  padding: var(--section) var(--m); background: var(--yellow) var(--foam);
 }
-.cta h2 { grid-column: 1 / 8; }
-.cta p { grid-column: 9 / 13; font-size: var(--step-lead); line-height: 1.3; }
+.cta h2 { grid-column: 1 / 8; justify-self: start; background: var(--bg); padding: 22px 28px; border-radius: var(--r); }
+.cta p { grid-column: 9 / 13; font-size: var(--step-lead); line-height: 1.3; background: var(--bg); padding: 18px 24px; border-radius: var(--r); }
 .cta .btn { grid-column: 9 / 13; justify-self: start; }
 
 /* ---------- team, contact, legal ---------- */
@@ -209,7 +228,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .page-head p { grid-column: 1 / 8; font-size: var(--step-lead); line-height: 1.3; }
 .people { display: grid; gap: var(--section); padding-top: var(--section); padding-bottom: var(--section); }
 .person { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: start; }
-.person__pic { grid-column: 1 / 6; overflow: hidden; }
+.person__pic { grid-column: 1 / 6; overflow: hidden; border-radius: var(--r); }
 .person__pic img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%; }
 .person__text { grid-column: 7 / 13; display: grid; gap: 20px; justify-items: start; }
 .person--flip .person__pic { grid-column: 8 / 13; grid-row: 1; }
@@ -217,7 +236,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .person__role { font-weight: 600; color: var(--soft); }
 .contact { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: start; padding-bottom: var(--section); }
 .contact__col { grid-column: 1 / 7; }
-.contact__pic { grid-column: 7 / 13; background: var(--surface); }
+.contact__pic { grid-column: 7 / 13; background: var(--surface); border-radius: var(--r); overflow: hidden; }
 .contact__pic img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .room { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); padding-bottom: var(--section); }
 .room h2 { grid-column: 1 / 6; }
@@ -272,9 +291,10 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   .hdr__nav, .hdr__lang { display: none; }
   .hdr__menu { display: block; }
   .hero, .intro__top, .cta, .page-head, .fl, .person, .contact, .room, .ftr__grid, .about { display: block; }
-  .hero { min-height: 0; padding-top: 40px; padding-bottom: 40px; }
-  .hero h1 { margin-bottom: 28px; }
-  .hero__copy { margin-bottom: 40px; }
+  .hero__panel { display: grid; grid-template-columns: 1fr; row-gap: 20px; }
+  .hero__pic, .hero__copy { grid-column: 1; grid-row: auto; }
+  .hero__img { height: auto; aspect-ratio: 16 / 11; }
+  .hero__copy { padding: 4px 6px 8px; gap: 20px; }
   .board { padding: 16px; }
   .floor summary { grid-template-columns: 84px 1fr 48px; }
   .floor__body { padding: 6px 16px 20px 16px; }

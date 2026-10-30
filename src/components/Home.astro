@@ -1,5 +1,4 @@
 ---
-import Board from './Board.astro';
 import Pic from './Pic.astro';
 import { href, type Locale } from '../lib/content';
 import { md } from '../lib/md';
@@ -12,18 +11,19 @@ const price = (slug: string) => data.board.rows.find((r: any) => r.href === `/${
 const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label;
 ---
 <section class="hero">
-  <h1 data-reveal>{data.hero.title}</h1>
-  <div class="hero__copy">
-    <p class="hero__text" data-reveal style="--d:90ms">{data.hero.text}</p>
-    <a class="btn btn--dark" href={href(locale, '/kurse')} data-reveal style="--d:180ms">{settings.cta.label}</a>
+  <div class="hero__panel">
+    <figure class="hero__pic" data-reveal>
+      <Pic src={data.hero.image} alt={data.hero.imageAlt} sizes="(min-width: 900px) 58vw, 100vw" loading="eager" class="hero__img" widths={[800, 1200, 1600, 1920]} />
+      {data.hero.imageCaption && <figcaption class="pill">{data.hero.imageCaption}</figcaption>}
+    </figure>
+    <div class="hero__copy">
+      <h1 data-reveal>{data.hero.title}</h1>
+      <p class="hero__text" data-reveal style="--d:90ms">{data.hero.text}</p>
+      <a class="btn" href={href(locale, '/kurse')} data-reveal style="--d:180ms">{settings.cta.label}</a>
+    </div>
   </div>
-  <Board data={data.board} locale={locale} />
+  {data.hero.tagline && <p class="hero__tag" data-reveal style="--d:240ms">{data.hero.tagline}</p>}
 </section>
-
-<figure class="plate">
-  <Pic src={data.hero.image} alt={data.hero.imageAlt} sizes="100vw" loading="eager" class="plate__img" widths={[800, 1200, 1600, 1920]} />
-  <figcaption>{data.hero.imageCaption}</figcaption>
-</figure>
 
 <section class="intro">
   <div class="intro__top">

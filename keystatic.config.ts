@@ -62,6 +62,7 @@ function build() {
             image: img('Bild'),
             imageAlt: fields.text({ label: 'Bildbeschreibung' }),
             imageCaption: fields.text({ label: 'Bildunterschrift' }),
+            tagline: fields.text({ label: 'Zeile unter dem Bild (z. B. Rhythmus · Gemeinschaft · Begegnung)' }),
           },
           { label: 'Anfang' },
         ),

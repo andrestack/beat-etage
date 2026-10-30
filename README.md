@@ -27,7 +27,7 @@ German is the main site at `/`. English mirrors it under `/en`.
 | UI strings that aren't content (button labels, headings) | `src/lib/i18n.ts` |
 | Redirects from old WordPress URLs | `redirects` in `astro.config.mjs` |
 | Security headers | `vercel.json` |
-| Design direction | `.taste-skill/direction.json` (its dealt navy and pink palette was replaced by the Roberta palette in `global.css`; the CSS wins) |
+| Design direction | `.taste-skill/direction.json` is the original sheet; the palette and shape have since moved to Nathan's palette and rounded corners (see Design rules). The CSS wins. |
 
 ### The idea
 
@@ -35,9 +35,11 @@ German is the main site at `/`. English mirrors it under `/en`.
 
 ### Design rules
 
-- Palette is Roberta's, Nathan's beige VW camper with a yellow streak: beige ground, yellow fields, near-black ink. Tokens are at the top of `global.css`.
+- Palette is Nathan's (Oct 2026): Naturweiß `#F5F0E6` ground, Fichtenholz `#DCC9A5` panels, Ockergelb `#D9B65D` accent and buttons, Walnuss `#40362F` text. Trommelbraun `#936A4D` only for large type or shapes (4.2:1 on white), Salbeigrün `#A5AE91` only for dots and shapes, never text. Small brown text uses `--soft` (`#6E4F39`). Tokens are at the top of `global.css`.
+- Rounded corners everywhere (`--r`, `--r-sm`, pills for labels). This deliberately sets it apart from teambeat, which is square.
+- Acoustic foam from the studio walls (`--foam`) is a background texture for coloured fields (visit, call to action). Text never sits directly on foam: put it on a rounded Naturweiß card, like a note pinned to the studio door.
 - One typeface, Hanken Grotesk, self-hosted through `@fontsource` (no requests to Google; this matters for GDPR).
-- Flat colour fields only: no gradients, no shadows, no hairlines, no icons in boxes. Square buttons.
+- No shadows. No icons in boxes.
 - No cookies, no analytics, no third-party embeds. Keep it that way, or update the Datenschutz text.
 - Photos need descriptive `alt` text (Keystatic field "Bildbeschreibung").
 
