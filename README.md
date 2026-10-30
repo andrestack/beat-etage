@@ -33,7 +33,7 @@ German is the main site at `/`. English mirrors it under `/en`.
 
 *"Etage" means floor:* Nathan first taught in an attic in his hometown, hence the name. That story stays ("Warum eigentlich Etage?" on the home page). The earlier floor-directory layout (Dach, 3. OG … Keller, "Hausverzeichnis") was our invention, not Nathan's, and was dropped on 30.10.2026. Offers are still stored as Keystatic entries under "Angebote" (internally the `floors` collection; route keys unchanged). Their old "Etage" field is now the **sticker**: a short fact stuck on the photo ("Wöchentlich", "Kein Mindestalter"). `Board.astro` is no longer used.
 
-The look is a **collage**, like the noticeboard on the studio door: photos slightly tilted with a strip of tape on top, round stickers on the corners, facts as coloured notes, text pinned on rounded cards over acoustic foam.
+The look is a **collage**, like the noticeboard on the studio door: photos slightly tilted with a strip of tape on top, round stickers on the corners, facts as coloured cards (kept straight), text pinned on rounded cards over acoustic foam.
 
 ### Design rules
 

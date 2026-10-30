@@ -333,11 +333,11 @@ body { overflow-x: clip; }
 }
 .hero__sticker:hover { rotate: 0deg; }
 
-/* facts as notes: coloured cards, each a little off-square */
-.collage li { padding: clamp(18px, 2vw, 28px); border-radius: var(--r); background: var(--surface); rotate: calc(-1.5deg * var(--k)); }
-.collage li:nth-child(2) { background: var(--yellow); rotate: calc(1.2deg * var(--k)); translate: 0 14px; }
-.collage li:nth-child(3) { background: var(--sage); rotate: calc(-0.8deg * var(--k)); }
-.collage li:nth-child(4) { background: var(--bg); outline: 2px solid var(--surface); rotate: calc(1.8deg * var(--k)); translate: 0 8px; }
+/* facts as notes: coloured cards, kept square and aligned */
+.collage li { padding: clamp(18px, 2vw, 28px); border-radius: var(--r); background: var(--surface); }
+.collage li:nth-child(2) { background: var(--yellow); }
+.collage li:nth-child(3) { background: var(--sage); }
+.collage li:nth-child(4) { background: var(--bg); outline: 2px solid var(--surface); }
 .collage li span { color: var(--ink); }
 
 /* ---------- phone and tablet ---------- */
