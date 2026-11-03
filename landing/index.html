@@ -49,6 +49,8 @@
     .alt { font-size: 0.9375rem; }
     .widget { margin-top: 24px; background: #fff; border-radius: var(--r); padding: clamp(8px, 2vw, 20px); text-align: left; overflow-x: auto; }
     .widget[hidden] { display: none; }
+    .foot { display: flex; gap: 24px; font-size: 0.9375rem; color: var(--soft); }
+    .foot a { color: inherit; text-underline-offset: 3px; display: inline-block; padding: 12px 0; }
 
     [data-lang="en"] [lang="de"], [data-lang="de"] [lang="en"] { display: none; }
   </style>
@@ -83,14 +85,19 @@
       <button type="button" class="btn" id="plan-load">
         <span lang="de">Stundenplan laden</span><span lang="en">Load timetable</span>
       </button>
-      <p class="note" lang="de">Erst mit dem Klick wird der Stundenplan von Eversports geladen. Dabei wird deine IP-Adresse an die Eversports GmbH übertragen. Mehr dazu in der <a href="https://www.eversports.de/h/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Eversports</a>.</p>
-      <p class="note" lang="en">The timetable only loads from Eversports when you click. This sends your IP address to Eversports GmbH. More in <a href="https://www.eversports.de/h/privacy" target="_blank" rel="noopener">Eversports' privacy policy</a>.</p>
+      <p class="note" lang="de">Erst mit dem Klick wird der Stundenplan von Eversports geladen. Dabei wird deine IP-Adresse an die Eversports GmbH übertragen. Mehr dazu in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p class="note" lang="en">The timetable only loads from Eversports when you click. This sends your IP address to Eversports GmbH. More in our <a href="/datenschutz.html">privacy policy</a> (German).</p>
       <p class="alt" lang="de">Oder direkt <a href="https://www.eversports.de/scl/percussionstudio-beat-etage" target="_blank" rel="noopener">bei Eversports ansehen</a>.</p>
       <p class="alt" lang="en">Or <a href="https://www.eversports.de/scl/percussionstudio-beat-etage" target="_blank" rel="noopener">view it on Eversports</a>.</p>
     </div>
 
     <div class="widget" id="plan-widget" hidden></div>
   </section>
+
+  <footer class="foot">
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+  </footer>
 
   <script>
     (function () {
