@@ -17,10 +17,8 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
       <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
     ))}
   </nav>
-  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName} data-lang={locale} data-from={locale} data-to={other}>
-    <span class="hdr__lang-l hdr__lang-l--de" aria-hidden="true">DE</span>
-    <span class="hdr__lang-t" aria-hidden="true"></span>
-    <span class="hdr__lang-l hdr__lang-l--en" aria-hidden="true">EN</span>
+  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName}>
+    <span class="hdr__lang-roll" aria-hidden="true"><span>{locale.toUpperCase()}</span><span>{other.toUpperCase()}</span></span>
   </a>
   <a class="btn" href={book} target={isExternal(book) && book.startsWith('http') ? '_blank' : undefined} rel={book.startsWith('http') ? 'noopener' : undefined}>{settings.cta.label}</a>
   <details class="hdr__menu">
@@ -31,17 +29,18 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
   </details>
 </header>
 <script>
-  // Slide the switch to the other language, then navigate once it has moved.
+  // Mouse users already see the other language on hover, so they go straight there.
+  // On touch there is no hover: roll the label first so the tap shows where it leads.
   const sw = document.querySelector<HTMLAnchorElement>('.hdr__lang');
   if (sw) {
     sw.addEventListener('click', (e) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (matchMedia('(hover: hover) and (pointer: fine)').matches) return;
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       e.preventDefault();
-      sw.dataset.lang = sw.dataset.to;
-      setTimeout(() => { location.href = sw.href; }, 340);
+      sw.classList.add('is-going');
+      setTimeout(() => { location.href = sw.href; }, 220);
     });
-    // Coming back via the back button restores the page as it was left.
-    addEventListener('pageshow', () => { sw.dataset.lang = sw.dataset.from; });
+    addEventListener('pageshow', () => sw.classList.remove('is-going'));
   }
 </script>
