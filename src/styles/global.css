@@ -101,6 +101,8 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   display: grid; padding: 12px var(--m) 28px; border-radius: 0 0 var(--r) var(--r);
 }
 .hdr__sheet a { font-size: var(--step-lead); font-weight: 500; text-decoration: none; padding: 12px 0; }
+.hdr__sheet .hdr__switch { margin-top: 8px; padding-top: 18px; border-top: 1px solid rgb(64 54 47 / .3); font-size: var(--step-body); display: flex; align-items: center; gap: 10px; }
+.hdr__switch b { display: inline-grid; place-items: center; min-width: 36px; height: 28px; padding: 0 8px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 0.75rem; letter-spacing: 0.06em; }
 
 /* ---------- reveal motion (content stays visible without JS) ---------- */
 .js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease) var(--d, 0ms), transform 0.8s var(--ease) var(--d, 0ms); }
@@ -161,13 +163,12 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .tiles h2 { margin-bottom: clamp(32px, 4vw, 56px); max-width: 16ch; }
 .tiles__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--gap); }
 .tile { display: block; overflow: hidden; text-decoration: none; grid-column: span 2; border-radius: var(--r); }
-.tile--4, .tile--5 { grid-column: span 3; }
 .tile__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; transition: transform 0.9s var(--ease); }
-.tile--4 .tile__img, .tile--5 .tile__img { aspect-ratio: 16 / 9; }
 .tile:hover .tile__img { transform: scale(1.04); }
 .tile__strip { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 18px; background: var(--ink); color: var(--bg); }
 .tile--2 .tile__strip, .tile--4 .tile__strip { background: var(--yellow); color: var(--ink); }
-.tile--3 .tile__strip { background: var(--surface); color: var(--ink); }
+.tile--3 .tile__strip, .tile--6 .tile__strip { background: var(--surface); color: var(--ink); }
+.tile--5 .tile__strip { background: var(--sage); color: var(--ink); }
 .tile__label { font-weight: 600; font-size: var(--step-small); min-width: 5.2em; }
 .tile__name { font-size: var(--step-lead); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin-right: auto; }
 .tile__price { font-size: var(--step-small); font-weight: 500; }
@@ -213,6 +214,10 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .offer__main p { max-width: 56ch; }
 .offer__when { font-weight: 500; }
 .offer__price { font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.15; }
+.offer__k { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* gift vouchers: a piece of paper, not another offer */
+.offer--voucher { grid-template-columns: 6fr 6fr; background: var(--bg); outline: 2px dashed var(--brown); outline-offset: -10px; margin-top: 16px; rotate: calc(-0.8deg * var(--k)); }
+.offer__price--list { white-space: pre-line; font-size: var(--step-body); line-height: 1.5; }
 .more { padding: 0 var(--m) var(--section); }
 .cta {
   display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); row-gap: 24px; align-items: start;
@@ -268,7 +273,8 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 /* ---------- other floors strip ---------- */
 .strip { padding: var(--section) var(--m); }
 .strip h2 { margin-bottom: clamp(32px, 4vw, 56px); }
-.strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); }
+.strip__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap); }
+@media (max-width: 1100px) { .strip__grid { grid-template-columns: repeat(3, 1fr); } }
 .strip .tile { grid-column: auto; }
 .strip .tile:nth-child(2n) .tile__strip { background: var(--yellow); color: var(--ink); }
 .strip .tile:nth-child(3n) .tile__strip { background: var(--surface); color: var(--ink); }
@@ -362,7 +368,7 @@ body { overflow-x: clip; }
 }
 @media (max-width: 900px) {
   :root { --header: 64px; --k: 0.55; }
-  .hero__sticker { top: -12px; left: auto; right: -6px; }
+  .hero__sticker { top: -12px; left: -6px; width: 84px; padding: 10px; font-size: 0.8125rem; line-height: 1.1; }
   .sticker, .fl__label { right: -4px; }
   .hdr__nav, .hdr__lang { display: none; }
   .hdr__menu { display: block; }
@@ -378,8 +384,7 @@ body { overflow-x: clip; }
   .facts { grid-template-columns: 1fr 1fr; row-gap: 32px; }
   .tiles__grid, .strip__grid { grid-template-columns: 1fr; }
   .page-head p { grid-column: auto; }
-  .tile, .tile--4, .tile--5 { grid-column: auto; }
-  .tile--4 .tile__img, .tile--5 .tile__img { aspect-ratio: 4 / 3; }
+  .tile { grid-column: auto; }
   .about__pic { position: static; max-width: 70%; margin-bottom: 32px; }
   .about__text { gap: 24px; }
   .card { grid-column: 7 / 13; }
@@ -391,7 +396,13 @@ body { overflow-x: clip; }
   .people { gap: 72px; }
   .contact__pic { margin-top: 40px; }
   .room .prose { margin-top: 20px; }
-  .offer { grid-template-columns: 1fr; gap: 10px; }
+  .offer { grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+  .offer__main { grid-column: 1 / -1; }
+  .offer__when, .offer__price { display: grid; gap: 2px; align-content: start; padding-top: 14px; border-top: 1px solid rgb(64 54 47 / .2); font-size: var(--step-body); }
+  .offer__price { font-size: var(--step-lead); }
+  .offer__k { position: static; width: auto; height: auto; overflow: visible; clip-path: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
+  .offer--voucher { grid-template-columns: 1fr; }
+  .offer__price--list { font-size: var(--step-body); }
   .prose--cols { columns: 1; }
   .ftr__grid > * { margin-bottom: 32px; }
   .plate__img { height: 56vh; }

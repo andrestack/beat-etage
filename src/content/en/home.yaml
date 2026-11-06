@@ -22,6 +22,11 @@ board:
       price: on request
       href: /teams
     - label: ""
+      title: Performances
+      text: Drum groups for birthdays, company parties or weddings, with horns, dance and vocals if you like.
+      price: on request
+      href: /auftritte
+    - label: ""
       title: Workshops
       text: Weekend workshops for djembe and dunduns, plus cajón and handpan. One day, one rhythm.
       price: 2 hrs from €49

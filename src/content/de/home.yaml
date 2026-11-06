@@ -22,6 +22,11 @@ board:
       price: auf Anfrage
       href: /teams
     - label: ""
+      title: Auftritte
+      text: Trommelgruppen für Geburtstag, Firmenfeier oder Hochzeit, auf Wunsch mit Bläsern, Tanz und Gesang.
+      price: auf Anfrage
+      href: /auftritte
+    - label: ""
       title: Workshops
       text: Wochenend-Workshops für Djembe und Dunduns, dazu Cajón und Handpan. Ein Tag, ein Rhythmus.
       price: 2 Std. ab 49 €

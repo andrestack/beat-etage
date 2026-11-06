@@ -26,10 +26,15 @@ classes:
     when: z. B. Frühlings-Camp 6.–9. Mai 2027
     price: ""
     note: 4 Tage Workshops für Djembe, Dunduns, Balafon und Tanz, rund 50 km außerhalb Berlins. Frühbucher-Rabatt bis 31.12.2026.
-body: |-
-  ## Geschenkgutscheine
-
-  Einen Einführungs-Workshop verschenken: für 1 Person 49 €, für 2 Personen 90 €, für 3 Personen 130 €, für 4 Personen 160 €. Per E-Mail oder Anruf bestellst du einen Gutschein zum Ausdrucken.
+voucher:
+  title: Geschenkgutscheine
+  text: "Einen Einführungs-Workshop verschenken: Per E-Mail oder Anruf bestellst du einen Gutschein zum Ausdrucken."
+  price: |-
+    1 Person 49 €
+    2 Personen 90 €
+    3 Personen 130 €
+    4 Personen 160 €
+body: ""
 ctaLabel: Termine & Buchung
 ctaHref: ""
 image: ../../../assets/media/de/floors/workshops/image.jpg

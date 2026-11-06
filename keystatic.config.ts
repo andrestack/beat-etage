@@ -156,6 +156,7 @@ function build() {
     intro: fields.text({ label: 'Einleitung', multiline: true }),
     image: img('Bild'),
     imageAlt: fields.text({ label: 'Bildbeschreibung' }),
+    whenLabel: fields.text({ label: 'Spalte „Wann“ umbenennen (leer = Wann)' }),
     classes: fields.array(
       fields.object({
         name: fields.text({ label: 'Name' }),
@@ -165,7 +166,17 @@ function build() {
       }),
       { label: 'Angebote', itemLabel: (p) => p.fields.name.value },
     ),
+    voucher: fields.object(
+      {
+        title: fields.text({ label: 'Überschrift (leer = kein Kasten)' }),
+        text: fields.text({ label: 'Text', multiline: true }),
+        price: fields.text({ label: 'Preise (kurz)', multiline: true }),
+      },
+      { label: 'Gutschein-Kasten (optional, unter den Angeboten)' },
+    ),
     body: rich('Text'),
+    ctaTitle: fields.text({ label: 'Abschluss-Kasten: Überschrift (leer = Standard)' }),
+    ctaText: fields.text({ label: 'Abschluss-Kasten: Text (leer = Standard)', multiline: true }),
     ctaLabel: fields.text({ label: 'Button: Text' }),
     ctaHref: fields.text({ label: 'Button: Link (leer = Buchungs-Link aus den Einstellungen)' }),
   };

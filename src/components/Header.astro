@@ -23,7 +23,7 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
     <summary>{ui.menu}</summary>
     <div class="hdr__sheet">
       {settings.nav.map((n: any) => <a href={href(locale, n.href)}>{n.label}</a>)}
-      <a href={switchLocale(path, other)} hreflang={other} lang={other}>{ui.langName}</a>
+      <a class="hdr__switch" href={switchLocale(path, other)} hreflang={other} lang={other}><b aria-hidden="true">{ui.langCode}</b>{ui.langSwitch}</a>
     </div>
   </details>
 </header>
