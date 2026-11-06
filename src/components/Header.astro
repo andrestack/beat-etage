@@ -17,11 +17,11 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
       <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
     ))}
   </nav>
-  <div class="hdr__lang" role="group" aria-label="Sprache / Language">
-    {(['de', 'en'] as Locale[]).map((l) => l === locale
-      ? <a href={path} lang={l} aria-current="true">{l.toUpperCase()}</a>
-      : <a href={switchLocale(path, l)} hreflang={l} lang={l} aria-label={ui.langName}>{l.toUpperCase()}</a>)}
-  </div>
+  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName} data-lang={locale} data-from={locale} data-to={other}>
+    <span class="hdr__lang-l hdr__lang-l--de" aria-hidden="true">DE</span>
+    <span class="hdr__lang-t" aria-hidden="true"></span>
+    <span class="hdr__lang-l hdr__lang-l--en" aria-hidden="true">EN</span>
+  </a>
   <a class="btn" href={book} target={isExternal(book) && book.startsWith('http') ? '_blank' : undefined} rel={book.startsWith('http') ? 'noopener' : undefined}>{settings.cta.label}</a>
   <details class="hdr__menu">
     <summary>{ui.menu}</summary>
@@ -30,3 +30,18 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
     </div>
   </details>
 </header>
+<script>
+  // Slide the switch to the other language, then navigate once it has moved.
+  const sw = document.querySelector<HTMLAnchorElement>('.hdr__lang');
+  if (sw) {
+    sw.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      e.preventDefault();
+      sw.dataset.lang = sw.dataset.to;
+      setTimeout(() => { location.href = sw.href; }, 340);
+    });
+    // Coming back via the back button restores the page as it was left.
+    addEventListener('pageshow', () => { sw.dataset.lang = sw.dataset.from; });
+  }
+</script>

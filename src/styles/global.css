@@ -92,10 +92,24 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { white-space: nowrap; padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
-.hdr__lang { display: flex; gap: 6px; }
-.hdr__lang a { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0 12px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); }
-.hdr__lang a:hover { background: var(--surface); }
-.hdr__lang a[aria-current] { background: var(--ink); color: var(--bg); }
+.hdr__lang { --rust: #ad5a40; --slate: #56697a; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 2px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; color: var(--soft); text-decoration: none; }
+.hdr__lang-l { transition: color 0.3s var(--ease); }
+.hdr__lang[data-lang="de"] .hdr__lang-l--de, .hdr__lang[data-lang="en"] .hdr__lang-l--en { color: var(--ink); font-weight: 800; }
+/* Track: flag colours toned down to the palette. DE = walnut / rust / ochre; EN = a simple cross on slate. */
+.hdr__lang-t { position: relative; flex: none; width: 44px; height: 24px; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden;
+  background: linear-gradient(var(--ink) 0 33.4%, var(--rust) 0 66.7%, var(--yellow) 0); }
+.hdr__lang-t::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s var(--ease);
+  background:
+    linear-gradient(var(--rust), var(--rust)) center / 100% 4px no-repeat,
+    linear-gradient(var(--rust), var(--rust)) center / 4px 100% no-repeat,
+    linear-gradient(var(--bg), var(--bg)) center / 100% 8px no-repeat,
+    linear-gradient(var(--bg), var(--bg)) center / 8px 100% no-repeat,
+    var(--slate); }
+.hdr__lang-t::after { content: ''; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); box-shadow: 0 1px 2px rgb(0 0 0 / 0.35); transition: transform 0.34s var(--ease); }
+.hdr__lang[data-lang="en"] .hdr__lang-t::before { opacity: 1; }
+.hdr__lang[data-lang="en"] .hdr__lang-t::after { transform: translateX(20px); }
+.hdr__lang:hover .hdr__lang-t { box-shadow: 0 0 0 3px var(--surface); }
+.hdr__lang:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 999px; }
 .hdr__menu { display: none; position: relative; }
 .hdr__menu summary { list-style: none; cursor: pointer; font-weight: 600; padding: 12px 0; }
 .hdr__menu summary::-webkit-details-marker { display: none; }
