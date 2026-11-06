@@ -36,6 +36,20 @@ const ui = t(locale);
     <main id="main"><slot /></main>
     <Footer settings={settings} locale={locale} />
     <script>
+      // Peel an offer tile off the wall before following its link. Plain clicks only:
+      // new-tab clicks and reduced motion go straight through.
+      const calm = matchMedia('(prefers-reduced-motion: reduce)');
+      document.addEventListener('click', (e) => {
+        const tile = (e.target as Element).closest?.('a.tile') as HTMLAnchorElement | null;
+        if (!tile || calm.matches || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || tile.target) return;
+        e.preventDefault();
+        tile.classList.add('is-peeling');
+        setTimeout(() => { location.href = tile.href; }, 380);
+      });
+      // Coming back via the back button restores the page from cache: put the note back.
+      addEventListener('pageshow', () => document.querySelectorAll('.is-peeling').forEach((el) => el.classList.remove('is-peeling')));
+    </script>
+    <script>
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const io = new IntersectionObserver(
           (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }),

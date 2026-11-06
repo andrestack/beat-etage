@@ -1,0 +1,42 @@
+title: Performances
+label: Live at your event
+seo:
+  title: Book a drum performance in Berlin
+  description: "Professional drum groups for birthdays, company parties, weddings or promotions: West African percussion, with jazz, funk, dance and vocals if you like."
+intro: "Handmade West African rhythms for your event: from a pure drum group to a line-up with horns, dance and vocals."
+imageAlt: Drummers on a stage, a breakdancer in front of them on a black-and-white floor
+whenLabel: Line-up
+classes:
+  - name: Drum group
+    when: from 3–4 percussionists
+    price: on request
+    note: Two or three drummers carry the groove while one solos over it. No electricity or amplification needed.
+  - name: Percussion & jazz-funk
+    when: 4–6 drummers plus a band
+    price: on request
+    note: "Drums with saxophone, electric bass and a sparing drum kit: a grooving Afro-funk sound that gets people dancing."
+  - name: Percussion & dance
+    when: 4–6 drummers plus dancers
+    price: on request
+    note: Break, Afro or modern dance in direct dialogue with the drums. Horns and vocals can be added.
+  - name: Percussion & vocals
+    when: drums, horns and voice
+    price: on request
+    note: With a singer or rapper who talks to the crowd and takes them along.
+body: |-
+  ## For any occasion
+
+  A ten-minute surprise at a birthday, the warm-up at a company party, an alternative to the dance band at a wedding or an eye-catcher for a promotion: handmade drum rhythms bring any event to life.
+
+  ## From our network
+
+  Percussionists, musicians and dancers from many countries have rehearsed and played at the Beat-Etage for years. We put together the right line-up for your occasion.
+
+  ## How to ask
+
+  Write to us with the key details: date, place, occasion, length and roughly how many guests. We'll get back to you with a proposal.
+ctaTitle: Does your event need a groove?
+ctaText: Tell us about your occasion. We put together the right line-up and get back to you with a proposal.
+ctaLabel: Request a performance
+ctaHref: mailto:kontakt@beat-etage.de?subject=Performance%20request
+image: ../../../assets/media/en/floors/auftritte/image.jpg

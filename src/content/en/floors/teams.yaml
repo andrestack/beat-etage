@@ -1,5 +1,5 @@
 title: Teams & events
-label: 3rd floor
+label: Here or at yours
 seo:
   title: Team drumming & events in Berlin
   description: Team development with drums for companies, workshop projects for nurseries and schools, interactive events and performances in Berlin.
@@ -21,7 +21,7 @@ classes:
   - name: Performances
     when: by arrangement
     price: on request
-    note: Professional drum performances.
+    note: "Drum groups, with horns, dance or vocals if you like: see the Performances page for all line-ups."
 body: |-
   ## Why drum as a team?
 

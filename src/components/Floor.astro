@@ -18,7 +18,7 @@ const ext = cta.startsWith('http');
     <a class="btn btn--dark" href={cta} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} data-reveal style="--d:210ms">{data.ctaLabel}</a>
   </div>
   <div class="fl__pic" data-reveal style="--d:120ms">
-    <p class="fl__label">{data.label}</p>
+    {data.label && <p class="fl__label">{data.label}</p>}
     <Pic src={data.image} alt={data.imageAlt} sizes="(min-width: 900px) 50vw, 100vw" loading="eager" widths={[600, 900, 1200, 1600]} />
   </div>
 </section>
@@ -29,21 +29,29 @@ const ext = cta.startsWith('http');
     {data.classes.map((c: any, i: number) => (
       <li class="offer" data-reveal style={`--d:${i * 60}ms`}>
         <div class="offer__main"><h3>{c.name}</h3>{c.note && <p>{c.note}</p>}</div>
-        <p class="offer__when">{c.when}</p>
-        <p class="offer__price">{c.price}</p>
+        {c.when && <p class="offer__when"><span class="offer__k">{data.whenLabel?.trim() || ui.when}</span>{c.when}</p>}
+        {c.price && <p class="offer__price"><span class="offer__k">{ui.price}</span>{c.price}</p>}
       </li>
     ))}
+    {data.voucher?.title && (
+      <li class="offer offer--voucher" data-reveal>
+        <div class="offer__main"><h3>{data.voucher.title}</h3>{data.voucher.text && <p>{data.voucher.text}</p>}</div>
+        {data.voucher.price && <p class="offer__price offer__price--list">{data.voucher.price}</p>}
+      </li>
+    )}
   </ul>
 </section>
 
-<section class="more">
-  <div class="prose prose--cols" set:html={md(data.body)} />
-</section>
+{data.body?.trim() && (
+  <section class="more">
+    <div class="prose prose--cols" set:html={md(data.body)} />
+  </section>
+)}
 
 <FloorStrip floors={floors} locale={locale} title={ui.allFloors} exclude={slug} />
 
 <section class="cta">
-  <h2 data-reveal>{ui.ctaTitle}</h2>
-  <p data-reveal style="--d:70ms">{ui.ctaText}</p>
+  <h2 data-reveal>{data.ctaTitle?.trim() || ui.ctaTitle}</h2>
+  <p data-reveal style="--d:70ms">{data.ctaText?.trim() || ui.ctaText}</p>
   <a class="btn btn--dark" href={cta} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} data-reveal style="--d:140ms">{data.ctaLabel}</a>
 </section>

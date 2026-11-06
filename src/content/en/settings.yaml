@@ -9,7 +9,9 @@ nav:
     href: /workshops
   - label: Teams
     href: /teams
-  - label: Team
+  - label: Performances
+    href: /auftritte
+  - label: About us
     href: /team
   - label: Contact
     href: /kontakt

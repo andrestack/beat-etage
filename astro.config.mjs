@@ -36,7 +36,6 @@ export default defineConfig({
     '/teamentwicklung-erwachsene': { status: 308, destination: '/teams' },
     '/teamentwicklung-jugendliche': { status: 308, destination: '/teams' },
     '/interaktives_event_erwachsene': { status: 308, destination: '/teams' },
-    '/auftritte': { status: 308, destination: '/teams' },
     '/coaching': { status: 308, destination: '/teams' },
     '/raum': { status: 308, destination: '/kontakt' },
     '/konzept': { status: 308, destination: '/team' },

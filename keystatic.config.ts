@@ -62,6 +62,7 @@ function build() {
             image: img('Bild'),
             imageAlt: fields.text({ label: 'Bildbeschreibung' }),
             imageCaption: fields.text({ label: 'Bildunterschrift' }),
+            tagline: fields.text({ label: 'Zeile unter dem Bild (z. B. Rhythmus · Gemeinschaft · Begegnung)' }),
           },
           { label: 'Anfang' },
         ),
@@ -70,16 +71,16 @@ function build() {
             title: fields.text({ label: 'Überschrift der Tafel' }),
             rows: fields.array(
               fields.object({
-                label: fields.text({ label: 'Etage (z. B. EG, 1. OG)' }),
+                label: fields.text({ label: 'Nicht mehr angezeigt (leer lassen)' }),
                 title: fields.text({ label: 'Name' }),
                 text: fields.text({ label: 'Text', multiline: true }),
                 price: fields.text({ label: 'Preis / Info (kurz)' }),
                 href: fields.text({ label: 'Link' }),
               }),
-              { label: 'Etagen', itemLabel: (p) => `${p.fields.label.value} · ${p.fields.title.value}` },
+              { label: 'Angebote', itemLabel: (p) => p.fields.title.value },
             ),
           },
-          { label: 'Etagen-Tafel' },
+          { label: 'Angebote (Preise auf den Startseiten-Kacheln)' },
         ),
         intro: fields.object(
           {
@@ -150,11 +151,12 @@ function build() {
 
   const floorSchema = {
     title: fields.slug({ name: { label: 'Name' } }),
-    label: fields.text({ label: 'Etage (z. B. 1. OG)' }),
+    label: fields.text({ label: 'Sticker (kurz, z. B. Wöchentlich)' }),
     seo,
     intro: fields.text({ label: 'Einleitung', multiline: true }),
     image: img('Bild'),
     imageAlt: fields.text({ label: 'Bildbeschreibung' }),
+    whenLabel: fields.text({ label: 'Spalte „Wann“ umbenennen (leer = Wann)' }),
     classes: fields.array(
       fields.object({
         name: fields.text({ label: 'Name' }),
@@ -164,7 +166,17 @@ function build() {
       }),
       { label: 'Angebote', itemLabel: (p) => p.fields.name.value },
     ),
+    voucher: fields.object(
+      {
+        title: fields.text({ label: 'Überschrift (leer = kein Kasten)' }),
+        text: fields.text({ label: 'Text', multiline: true }),
+        price: fields.text({ label: 'Preise (kurz)', multiline: true }),
+      },
+      { label: 'Gutschein-Kasten (optional, unter den Angeboten)' },
+    ),
     body: rich('Text'),
+    ctaTitle: fields.text({ label: 'Abschluss-Kasten: Überschrift (leer = Standard)' }),
+    ctaText: fields.text({ label: 'Abschluss-Kasten: Text (leer = Standard)', multiline: true }),
     ctaLabel: fields.text({ label: 'Button: Text' }),
     ctaHref: fields.text({ label: 'Button: Link (leer = Buchungs-Link aus den Einstellungen)' }),
   };
@@ -190,7 +202,7 @@ for (const { code, label } of LOCALES) {
   IMG_DIR = `src/assets/media/${code}/floors`;
   IMG_PUB = `../../../assets/media/${code}/floors/`;
   collections[`floors_${code}`] = collection({
-    label: `Etagen (${label})`,
+    label: `Angebote (${label})`,
     slugField: 'title',
     path: `src/content/${code}/floors/*`,
     format: { data: 'yaml' },

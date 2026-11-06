@@ -1,0 +1,42 @@
+title: Auftritte
+label: Live auf deinem Fest
+seo:
+  title: Trommel-Auftritte in Berlin buchen
+  description: "Professionelle Trommelgruppen für Geburtstag, Firmenfeier, Hochzeit oder Werbeaktion: westafrikanische Percussion, auf Wunsch mit Jazz, Funk, Tanz und Gesang."
+intro: "Handgemachte westafrikanische Rhythmen für dein Event: von der reinen Trommelgruppe bis zur Besetzung mit Bläsern, Tanz und Gesang."
+imageAlt: Trommler auf einer Bühne, davor ein Breakdancer auf schwarz-weißem Boden
+whenLabel: Besetzung
+classes:
+  - name: Trommelgruppe
+    when: ab 3–4 Percussionist:innen
+    price: auf Anfrage
+    note: Zwei bis drei Trommler:innen tragen den Groove, eine:r soliert darüber. Ganz ohne Strom und Verstärker.
+  - name: Percussion & Jazz-Funk
+    when: 4–6 Trommler:innen plus Band
+    price: auf Anfrage
+    note: "Trommeln mit Saxophon, E-Bass und sparsam eingesetztem Schlagzeug: ein groovender Afro-Funk-Sound, der Partylaune macht."
+  - name: Percussion & Tanz
+    when: 4–6 Trommler:innen plus Tänzer:innen
+    price: auf Anfrage
+    note: Break-, Afro- oder Modern Dance im direkten Dialog mit den Trommeln. Auf Wunsch zusätzlich mit Bläsern und Gesang.
+  - name: Percussion & Gesang
+    when: Trommeln, Bläser und Stimme
+    price: auf Anfrage
+    note: Mit Sänger:in oder Rapper:in, die das Publikum direkt anspricht und mitnimmt.
+body: |-
+  ## Für jede Gelegenheit
+
+  Ein zehnminütiger Überraschungsauftritt zum Geburtstag, der Aufheizer auf der Firmenfeier, die Alternative zur Tanzband auf der Hochzeit oder ein Hingucker für eine Werbeaktion: handgemachte Trommelrhythmen bringen Leben auf jedes Event.
+
+  ## Aus unserem Netzwerk
+
+  In der Beat-Etage proben und spielen seit Jahren Percussionist:innen, Musiker:innen und Tänzer:innen aus vielen Ländern. Wir stellen die passende Besetzung für deinen Anlass zusammen.
+
+  ## So fragst du an
+
+  Schreib uns mit den Eckdaten: Datum, Ort, Anlass, gewünschte Dauer und ungefähre Zahl der Gäste. Wir melden uns mit einem Vorschlag.
+ctaTitle: Dein Fest braucht einen Groove?
+ctaText: Erzähl uns von deinem Anlass. Wir stellen die passende Besetzung zusammen und melden uns mit einem Vorschlag.
+ctaLabel: Auftritt anfragen
+ctaHref: mailto:kontakt@beat-etage.de?subject=Anfrage%20Auftritt
+image: ../../../assets/media/de/floors/auftritte/image.jpg

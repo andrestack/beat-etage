@@ -1,5 +1,5 @@
 title: Workshops
-label: 2nd floor
+label: Weekends
 seo:
   title: "Drum workshops in Berlin: djembe, cajón, handpan"
   description: "Weekend workshops in Berlin-Treptow: introduction to djembe and dunduns from €49, cajón and handpan with Alex, djembe camps."
@@ -26,10 +26,15 @@ classes:
     when: e.g. Spring Camp 6–9 May 2027
     price: ""
     note: 4 days of workshops for djembe, dunduns, balafon and dance, about 50 km outside Berlin. Early-bird discount until 31 Dec 2026.
-body: |-
-  ## Gift vouchers
-
-  Give an introductory workshop as a gift: €49 for 1 person, €90 for 2 people, €130 for 3 people, €160 for 4 people. Order a printable voucher by email or phone.
+voucher:
+  title: Gift vouchers
+  text: "Give an introductory workshop as a gift: order a printable voucher by email or phone."
+  price: |-
+    1 person €49
+    2 people €90
+    3 people €130
+    4 people €160
+body: ""
 ctaLabel: Dates & booking
 ctaHref: ""
 image: ../../../assets/media/en/floors/workshops/image.jpg

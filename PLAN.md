@@ -23,6 +23,10 @@ Nathan Berg owns the business and will get repo access. Beat-Etage and teambeat 
 
 The old text is in `reference/old-site-text/` (gitignored, because it contains bank details). Never copy the IBAN into the site. The postal address (Heidelberger Str. 44 F) appears only in the Impressum and Datenschutz, where German law requires a service address. Nathan should confirm it. Do not carry over the injected casino block from `home.txt`.
 
+## Design update (30.10.2026)
+
+Nathan sent his own palette and a mockup. Now: his six colours, rounded corners (sets it apart from teambeat), a hero like his mockup, acoustic foam from the studio as a background texture, and a collage style (tilted photos, tape, stickers). The floor-directory concept below was dropped; the README's "The idea" and "Design rules" are current. The section below is the original direction, kept for history.
+
 ## Design direction
 
 Generated with the design-taste-frontend skill. The full sheet is in `.taste-skill/direction.json` (reprint with `node <skill>/scripts/draw.mjs --show`).

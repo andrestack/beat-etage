@@ -17,13 +17,30 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
       <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
     ))}
   </nav>
-  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName}>{ui.langCode}</a>
+  <a class="hdr__lang" href={switchLocale(path, other)} hreflang={other} lang={other} aria-label={ui.langName}>
+    <span class="hdr__lang-roll" aria-hidden="true"><span>{locale.toUpperCase()}</span><span>{other.toUpperCase()}</span></span>
+  </a>
   <a class="btn" href={book} target={isExternal(book) && book.startsWith('http') ? '_blank' : undefined} rel={book.startsWith('http') ? 'noopener' : undefined}>{settings.cta.label}</a>
   <details class="hdr__menu">
     <summary>{ui.menu}</summary>
     <div class="hdr__sheet">
       {settings.nav.map((n: any) => <a href={href(locale, n.href)}>{n.label}</a>)}
-      <a href={switchLocale(path, other)} hreflang={other} lang={other}>{ui.langName}</a>
     </div>
   </details>
 </header>
+<script>
+  // Mouse users already see the other language on hover, so they go straight there.
+  // On touch there is no hover: roll the label first so the tap shows where it leads.
+  const sw = document.querySelector<HTMLAnchorElement>('.hdr__lang');
+  if (sw) {
+    sw.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      e.preventDefault();
+      sw.classList.add('is-going');
+      setTimeout(() => { location.href = sw.href; }, 220);
+    });
+    addEventListener('pageshow', () => sw.classList.remove('is-going'));
+  }
+</script>
