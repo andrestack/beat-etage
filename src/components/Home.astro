@@ -18,6 +18,7 @@ const contactLabel = settings.nav.find((n: any) => n.href === '/kontakt')?.label
       {price('kurse') && <a class="hero__sticker" href={href(locale, '/kurse')}>{price('kurse')}</a>}
     </figure>
     <div class="hero__copy">
+      <span class="logo hero__logo" role="img" aria-label="Beat-Etage – percussionstudio, learn rhythm together" data-reveal></span>
       <h1 data-reveal>{data.hero.title}</h1>
       <p class="hero__text" data-reveal style="--d:90ms">{data.hero.text}</p>
       <a class="btn" href={href(locale, '/kurse')} data-reveal style="--d:180ms">{settings.cta.label}</a>
