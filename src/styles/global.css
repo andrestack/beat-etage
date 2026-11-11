@@ -93,7 +93,6 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 /* Nathan's logo (public/logo.svg), painted through a mask so it takes the text colour. */
 .logo { display: block; aspect-ratio: 10139 / 4307; background: currentColor; -webkit-mask: url(/logo.svg) center / contain no-repeat; mask: url(/logo.svg) center / contain no-repeat; }
 .hdr__logo { height: 46px; }
-.hero__logo { width: clamp(180px, 20vw, 300px); }
 .hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { white-space: nowrap; padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
@@ -280,7 +279,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .ftr__addr { grid-column: 7 / 10; display: grid; gap: 4px; align-content: start; }
 .ftr__links { grid-column: 10 / 13; display: grid; gap: 4px; align-content: start; }
 .ftr a { text-decoration-color: var(--yellow); text-decoration-thickness: 0.14em; }
-.ftr__logo { width: min(100%, 1100px); margin-top: clamp(40px, 6vw, 96px); }
+.ftr__logo { width: min(100%, 550px); margin: clamp(40px, 6vw, 96px) auto 0; }
 .ftr__imprint { padding: 16px 0 20px; font-size: var(--step-small); color: var(--soft); }
 
 /* ---------- other floors strip ---------- */
