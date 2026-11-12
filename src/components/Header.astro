@@ -6,12 +6,13 @@ interface Props { settings: any; locale: Locale }
 const { settings, locale } = Astro.props;
 const ui = t(locale);
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = path === href(locale, '/');
 const other: Locale = locale === 'de' ? 'en' : 'de';
 const here = (h: string) => { const target = href(locale, h); return path === target || path.startsWith(target + '/'); };
 const book = settings.booking.url ? bookingHref(settings) : href(locale, settings.cta.href);
 ---
 <header class="hdr">
-  <a class="hdr__brand" href={href(locale, '/')} aria-label={`${settings.siteName}: ${ui.home}`}><span class="logo hdr__logo" aria-hidden="true"></span></a>
+  <a class="hdr__brand" href={href(locale, '/')} aria-label={`${settings.siteName}: ${ui.home}`}>{isHome ? settings.siteName : <span class="logo hdr__logo" aria-hidden="true"></span>}</a>
   <nav class="hdr__nav" aria-label="Hauptnavigation">
     {settings.nav.map((n: any) => (
       <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
