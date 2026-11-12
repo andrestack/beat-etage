@@ -32,7 +32,7 @@
   --m: clamp(16px, 2.4vw, 32px);
   --gap: clamp(16px, 2vw, 32px);
   --section: clamp(80px, 11vw, 176px);
-  --header: 120px;
+  --header: 88px;
   --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -92,7 +92,7 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .hdr__brand { display: block; margin-right: auto; }
 /* Nathan's logo (public/logo.svg), painted through a mask so it takes the text colour. */
 .logo { display: block; aspect-ratio: 10139 / 4307; background: currentColor; -webkit-mask: url(/logo.svg) center / contain no-repeat; mask: url(/logo.svg) center / contain no-repeat; }
-.hdr__logo { height: 100px; }
+.hdr__logo { height: 66px; }
 .hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { white-space: nowrap; padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
@@ -386,7 +386,7 @@ body { overflow-x: clip; }
   .hdr__menu { display: block; }
 }
 @media (max-width: 900px) {
-  :root { --header: 92px; --k: 0.55; } .hdr__logo { height: 72px; }
+  :root { --header: 84px; --k: 0.55; }
   .hero__sticker { top: -12px; left: -6px; width: 84px; padding: 10px; font-size: 0.8125rem; line-height: 1.1; }
   .sticker, .fl__label { right: -4px; }
   .hdr__nav { display: none; }
