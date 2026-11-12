@@ -89,11 +89,10 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
   height: var(--header); padding: 0 var(--m);
   background: var(--bg);
 }
-.hdr__brand { display: block; margin-right: auto; white-space: nowrap; font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.01em; text-transform: uppercase; text-decoration: none; }
+.hdr__brand { display: block; margin-right: auto; }
 /* Nathan's logo (public/logo.svg), painted through a mask so it takes the text colour. */
 .logo { display: block; aspect-ratio: 10139 / 4307; background: currentColor; -webkit-mask: url(/logo.svg) center / contain no-repeat; mask: url(/logo.svg) center / contain no-repeat; }
 .hdr__logo { height: 46px; }
-.hero__logo { width: clamp(220px, 30vw, 440px); }
 .hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { white-space: nowrap; padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
