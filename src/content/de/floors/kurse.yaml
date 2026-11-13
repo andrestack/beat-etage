@@ -46,6 +46,18 @@ prices:
     note: 30 Min. · 45 Min. = 45 €
     featured: false
 pricesNote: "Die Kurse leiten erfahrene Percussionist:innen, denen eine angemessene Balance zwischen Förderung und Forderung wichtig ist. Einzelunterricht zahlst du bar oder per Überweisung."
+teachersTitle: ""
+teachers:
+  - name: Nathan Berg
+    role: ""
+  - name: Toumany Fofana
+    role: ""
+  - name: Alex Streletz
+    role: ""
+  - name: ""
+    role: ""
+  - name: ""
+    role: ""
 body: ""
 ctaLabel: Termine & Buchung
 ctaHref: ""

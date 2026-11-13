@@ -46,6 +46,18 @@ prices:
     note: 30 min · 45 min = €45
     featured: false
 pricesNote: "The classes are led by experienced percussionists who care about the right balance of support and challenge. Private lessons are paid in cash or by bank transfer."
+teachersTitle: ""
+teachers:
+  - name: Nathan Berg
+    role: ""
+  - name: Toumany Fofana
+    role: ""
+  - name: Alex Streletz
+    role: ""
+  - name: ""
+    role: ""
+  - name: ""
+    role: ""
 body: ""
 ctaLabel: Dates & booking
 ctaHref: ""

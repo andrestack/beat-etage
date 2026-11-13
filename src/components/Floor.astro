@@ -1,7 +1,7 @@
 ---
 import Pic from './Pic.astro';
 import FloorStrip from './FloorStrip.astro';
-import { type Locale } from '../lib/content';
+import { type Locale, getSingleton, href } from '../lib/content';
 import { bookingHref } from '../lib/booking';
 import { md } from '../lib/md';
 import { t } from '../lib/i18n';
@@ -10,6 +10,12 @@ const { data, settings, locale, floors, slug } = Astro.props;
 const ui = t(locale);
 const cta = data.ctaHref?.trim() || bookingHref(settings, data.title);
 const ext = cta.startsWith('http');
+// Teachers: photos and roles come from the team page; unknown or empty names stay placeholders.
+const team = data.teachers?.length ? await getSingleton('team', locale) : null;
+const teachers = (data.teachers ?? []).map((t: any) => {
+  const m = team?.members.find((x: any) => x.name.trim().toLowerCase() === t.name?.trim().toLowerCase());
+  return { name: t.name?.trim() || '', role: t.role?.trim() || m?.role || '', image: m?.image, member: !!m };
+});
 
 // Split "ab 24 € für 2 Personen" into a small lead-in, a big amount and the rest,
 // so the ticket stub can show the number large. Text without an amount stays as is.
@@ -88,6 +94,28 @@ function rowCta(c: any) {
     )}
   </ul>
 </section>
+
+{teachers.length > 0 && (
+  <section class="teachers">
+    <h2 data-reveal>{data.teachersTitle?.trim() || ui.teachers}</h2>
+    <ul class="teachers__grid">
+      {teachers.map((t: any, i: number) => (
+        <li class:list={['teacher', { 'teacher--soon': !t.image }]} data-reveal style={`--d:${i * 60}ms`}>
+          {t.member ? (
+            <a class="teacher__pic" href={href(locale, '/team')}>
+              {t.image ? <Pic src={t.image} alt={t.name} sizes="(min-width: 900px) 20vw, 50vw" widths={[320, 480, 720]} /> : <span class="teacher__ph" />}
+              {!t.image && <span class="sticker">{ui.photoSoon}</span>}
+            </a>
+          ) : (
+            <div class="teacher__pic"><span class="teacher__ph" /><span class="sticker">{ui.photoSoon}</span></div>
+          )}
+          <p class="teacher__name">{t.name || ui.nameSoon}</p>
+          {t.role && <p class="teacher__role">{t.role}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
 
 {data.body?.trim() && (
   <section class="more">

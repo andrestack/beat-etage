@@ -178,6 +178,14 @@ function build() {
       { label: 'Preis-Kacheln (optional, über den Angeboten)', itemLabel: (p) => p.fields.label.value },
     ),
     pricesNote: fields.text({ label: 'Hinweis unter den Preis-Kacheln (optional)', multiline: true }),
+    teachersTitle: fields.text({ label: 'Lehrer:innen: Überschrift (leer = Deine Lehrer:innen)' }),
+    teachers: fields.array(
+      fields.object({
+        name: fields.text({ label: 'Name (wie auf der Team-Seite; Foto kommt von dort. Leer oder neu = Platzhalter)' }),
+        role: fields.text({ label: 'Rolle (leer = Rolle von der Team-Seite)' }),
+      }),
+      { label: 'Lehrer:innen (optional, unter den Angeboten)', itemLabel: (p) => p.fields.name.value || 'Platzhalter' },
+    ),
     voucher: fields.object(
       {
         title: fields.text({ label: 'Überschrift (leer = kein Kasten)' }),
