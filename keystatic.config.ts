@@ -152,6 +152,16 @@ function build() {
   const floorSchema = {
     title: fields.slug({ name: { label: 'Name' } }),
     label: fields.text({ label: 'Sticker (kurz, z. B. Wöchentlich)' }),
+    color: fields.select({
+      label: 'Farbe des Banners oben',
+      options: [
+        { label: 'Ocker', value: 'ochre' },
+        { label: 'Salbei', value: 'sage' },
+        { label: 'Fichte', value: 'pine' },
+        { label: 'Walnuss (dunkel)', value: 'walnut' },
+      ],
+      defaultValue: 'pine',
+    }),
     seo,
     intro: fields.text({ label: 'Einleitung', multiline: true }),
     image: img('Bild'),

@@ -4,9 +4,11 @@ import { md } from '../lib/md';
 interface Props { data: any; photo: { image: string; imageAlt: string; imageCaption: string } }
 const { data, photo } = Astro.props;
 ---
-<section class="page-head">
-  <h1 data-reveal>{data.title}</h1>
-  <p data-reveal style="--d:90ms">{data.intro}</p>
+<section class="page-head page-head--sage">
+  <div class="page-head__panel">
+    <h1 data-reveal>{data.title}</h1>
+    <p data-reveal style="--d:90ms">{data.intro}</p>
+  </div>
 </section>
 <figure class="plate plate--short">
   <Pic src={photo.image} alt={photo.imageAlt} sizes="100vw" class="plate__img" widths={[800, 1200, 1600, 1920]} />

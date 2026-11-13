@@ -9,9 +9,11 @@ const { data, settings, locale, floors } = Astro.props;
 const ui = t(locale);
 const tel = settings.phone.replace(/[^\d+]/g, '').replace(/^0/, '+49');
 ---
-<section class="page-head">
-  <h1 data-reveal>{data.title}</h1>
-  <p data-reveal style="--d:90ms">{data.intro}</p>
+<section class="page-head page-head--ochre">
+  <div class="page-head__panel">
+    <h1 data-reveal>{data.title}</h1>
+    <p data-reveal style="--d:90ms">{data.intro}</p>
+  </div>
 </section>
 <section class="contact">
   <div class="contact__col">

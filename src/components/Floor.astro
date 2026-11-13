@@ -31,7 +31,8 @@ function rowCta(c: any) {
   return { href, label: c.ctaLabel?.trim() || (request ? ui.enquire : ui.book), ext: href.startsWith('http') };
 }
 ---
-<section class="fl">
+<section class={`fl fl--${data.color || 'pine'}`}>
+  <div class="fl__panel">
   <div class="fl__copy">
     <h1 data-reveal>{data.title}</h1>
     <p class="fl__intro" data-reveal style="--d:140ms">{data.intro}</p>
@@ -40,6 +41,7 @@ function rowCta(c: any) {
   <div class="fl__pic" data-reveal style="--d:120ms">
     {data.label && <p class="fl__label">{data.label}</p>}
     <Pic src={data.image} alt={data.imageAlt} sizes="(min-width: 900px) 50vw, 100vw" loading="eager" widths={[600, 900, 1200, 1600]} />
+  </div>
   </div>
 </section>
 
