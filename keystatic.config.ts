@@ -163,8 +163,19 @@ function build() {
         when: fields.text({ label: 'Wann' }),
         price: fields.text({ label: 'Preis' }),
         note: fields.text({ label: 'Hinweis', multiline: true }),
+        ctaLabel: fields.text({ label: 'Button: Text (leer = Buchen bzw. Anfragen)' }),
+        ctaHref: fields.text({ label: 'Button: Link (leer = Buchungs-Link der Seite, bei „auf Anfrage“ E-Mail)' }),
       }),
       { label: 'Angebote', itemLabel: (p) => p.fields.name.value },
+    ),
+    prices: fields.array(
+      fields.object({
+        label: fields.text({ label: 'Name (z. B. Membership)' }),
+        price: fields.text({ label: 'Preis (z. B. ab 55 €)' }),
+        note: fields.text({ label: 'Zusatz (z. B. im Monat)' }),
+        featured: fields.checkbox({ label: 'Hervorheben' }),
+      }),
+      { label: 'Preis-Kacheln (optional, über den Angeboten)', itemLabel: (p) => p.fields.label.value },
     ),
     voucher: fields.object(
       {

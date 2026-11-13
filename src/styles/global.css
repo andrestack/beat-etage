@@ -220,16 +220,43 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .fl__pic img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 28%; }
 .offers { padding: 0 var(--m) var(--section); }
 .offers h2 { margin-bottom: clamp(28px, 3.5vw, 48px); }
-.offers__list { display: grid; gap: 8px; }
-.offer { display: grid; grid-template-columns: 6fr 3fr 3fr; gap: var(--gap); align-items: start; padding: clamp(20px, 2.4vw, 32px); background: var(--surface); border-radius: var(--r); }
-.offer__main { display: grid; gap: 10px; }
-.offer__main p { max-width: 56ch; }
-.offer__when { font-weight: 500; }
-.offer__price { font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.15; }
+.offers__list { display: grid; gap: 12px; }
+
+/* Each offer is a ticket: the details on pine, a perforated ochre stub with the price and its own button. */
+.offer { position: relative; display: grid; grid-template-columns: 1fr minmax(240px, 28%); background: var(--surface); border-radius: var(--r); overflow: hidden; }
+.offer__main { display: grid; gap: 12px; align-content: start; padding: clamp(22px, 2.6vw, 36px); }
+.offer__main p { max-width: 58ch; }
+.offer__info { display: grid; gap: 14px; }
+.offer__when { display: grid; gap: 2px; font-weight: 600; line-height: 1.35; }
+.offer__wk { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.offer__stub { position: relative; display: grid; align-content: space-between; justify-items: start; gap: 20px; padding: clamp(22px, 2.6vw, 36px); background: var(--yellow); border-left: 2px dashed rgb(64 54 47 / .4); }
+/* the two punched notches where stub meets ticket */
+.offer__stub::before, .offer__stub::after { content: ''; position: absolute; left: -13px; width: 24px; height: 24px; border-radius: 50%; background: var(--bg); }
+.offer__stub::before { top: -12px; }
+.offer__stub::after { bottom: -12px; }
+.offer__price { display: grid; gap: 2px; }
+.offer__lead { font-size: var(--step-small); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.offer__amount { font-size: var(--step-fact); font-weight: 600; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; }
+.offer__rest { margin-top: 6px; font-size: var(--step-small); font-weight: 500; line-height: 1.4; }
+.offer__text { font-size: var(--step-lead); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.offer__btn { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: var(--step-small); text-decoration: none; transition: transform 160ms var(--ease-out), background-color 200ms ease; }
+.offer__btn:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .offer__btn:hover { background: var(--soft); } }
 .offer__k { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-/* gift vouchers: a piece of paper, not another offer */
-.offer--voucher { grid-template-columns: 6fr 6fr; background: var(--bg); outline: 2px dashed var(--brown); outline-offset: -10px; margin-top: 16px; rotate: calc(-0.8deg * var(--k)); }
-.offer__price--list { white-space: pre-line; font-size: var(--step-body); line-height: 1.5; }
+
+/* price tiles above the offers (Kurse) */
+.prices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+.price { display: grid; align-content: start; gap: 4px; padding: clamp(20px, 2.2vw, 30px); border: 2px solid var(--surface); border-radius: var(--r); }
+.price__label { font-size: var(--step-small); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
+.price__amount { margin-top: 8px; font-size: var(--step-fact); font-weight: 600; letter-spacing: -0.035em; line-height: 1; }
+.price__note { font-size: var(--step-small); }
+.price--hi { background: var(--ink); border-color: var(--ink); color: var(--bg); rotate: calc(-1deg * var(--k)); }
+.price--hi .price__label { color: var(--yellow); }
+
+/* gift vouchers: a piece of paper, not another ticket */
+.offer--voucher { grid-template-columns: 6fr 6fr; gap: var(--gap); padding: clamp(20px, 2.4vw, 32px); background: var(--bg); outline: 2px dashed var(--brown); outline-offset: -10px; margin-top: 16px; overflow: visible; rotate: calc(-0.8deg * var(--k)); }
+.offer--voucher .offer__main { padding: 0; }
+.offer__price--list { white-space: pre-line; line-height: 1.5; font-weight: 600; }
 .more { padding: 0 var(--m) var(--section); }
 .cta {
   display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); row-gap: 24px; align-items: start;
@@ -416,13 +443,12 @@ body { overflow-x: clip; }
   .people { gap: 72px; }
   .contact__pic { margin-top: 40px; }
   .room .prose { margin-top: 20px; }
-  .offer { grid-template-columns: 1fr 1fr; gap: 14px 16px; }
-  .offer__main { grid-column: 1 / -1; }
-  .offer__when, .offer__price { display: grid; gap: 2px; align-content: start; padding-top: 14px; border-top: 1px solid rgb(64 54 47 / .2); font-size: var(--step-body); }
-  .offer__price { font-size: var(--step-lead); }
-  .offer__k { position: static; width: auto; height: auto; overflow: visible; clip-path: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
+  .offer { grid-template-columns: 1fr; }
+  .offer__stub { grid-auto-flow: column; align-items: end; justify-content: space-between; gap: 16px; border-left: 0; border-top: 2px dashed rgb(64 54 47 / .4); }
+  .offer__stub::before { top: -13px; left: -12px; }
+  .offer__stub::after { top: -13px; bottom: auto; left: auto; right: -12px; }
+  .prices { grid-template-columns: 1fr 1fr; }
   .offer--voucher { grid-template-columns: 1fr; }
-  .offer__price--list { font-size: var(--step-body); }
   .prose--cols { columns: 1; }
   .ftr__grid > * { margin-bottom: 32px; }
   .plate__img { height: 56vh; }

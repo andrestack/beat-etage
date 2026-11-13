@@ -22,14 +22,24 @@ classes:
     when: as announced · up to 120 min
     price: ""
     note: "For aspiring professionals: micro-timing, variations on the dunduns and the interplay of soloist, sangban and dundunba."
+prices:
+  - label: Trial class
+    price: from €10
+    note: to try it out
+    featured: false
+  - label: Single ticket
+    price: from €20
+    note: per class
+    featured: false
+  - label: Membership
+    price: from €55
+    note: a month
+    featured: true
+  - label: Private lesson
+    price: €30
+    note: 30 min · 45 min = €45
+    featured: false
 body: |-
-  ## Prices
-
-  - Trial class from €10
-  - Single ticket from €20
-  - Membership from €55 a month
-  - Private lessons: 30 min = €30, 45 min = €45
-
   The classes are led by experienced percussionists who care about the right balance of support and challenge. Private lessons are paid in cash or by bank transfer.
 
   ## Handpan and cajón

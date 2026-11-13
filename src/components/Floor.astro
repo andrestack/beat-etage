@@ -10,6 +10,20 @@ const { data, settings, locale, floors, slug } = Astro.props;
 const ui = t(locale);
 const cta = data.ctaHref?.trim() || bookingHref(settings, data.title);
 const ext = cta.startsWith('http');
+
+// Split "ab 24 € für 2 Personen" into a small lead-in, a big amount and the rest,
+// so the ticket stub can show the number large. Text without an amount stays as is.
+function splitPrice(p: string) {
+  const m = p.match(/^(ab|from)?\s*(\d[\d.,]*\s*€|€\s*\d[\d.,]*)\s*(.*)$/i);
+  return m ? { lead: m[1] ?? '', amount: m[2].replace(/\s+/g, '\u202f'), rest: m[3] } : { lead: '', amount: '', rest: p };
+}
+const onRequest = /anfrage|request|aufwand|effort/i;
+function rowCta(c: any) {
+  const request = !!data.ctaHref?.trim() || onRequest.test(c.price ?? '');
+  const href = c.ctaHref?.trim() || data.ctaHref?.trim()
+    || (request ? `mailto:${settings.email}?subject=${encodeURIComponent(c.name)}` : cta);
+  return { href, label: c.ctaLabel?.trim() || (request ? ui.enquire : ui.book), ext: href.startsWith('http') };
+}
 ---
 <section class="fl">
   <div class="fl__copy">
@@ -25,18 +39,50 @@ const ext = cta.startsWith('http');
 
 <section class="offers">
   <h2 data-reveal>{ui.classes}</h2>
+  {data.prices?.length > 0 && (
+    <ul class="prices" aria-label={ui.prices}>
+      {data.prices.map((t: any, i: number) => (
+        <li class:list={['price', { 'price--hi': t.featured }]} data-reveal style={`--d:${i * 60}ms`}>
+          <p class="price__label">{t.label}</p>
+          <p class="price__amount">{t.price}</p>
+          {t.note && <p class="price__note">{t.note}</p>}
+        </li>
+      ))}
+    </ul>
+  )}
   <ul class="offers__list">
-    {data.classes.map((c: any, i: number) => (
-      <li class="offer" data-reveal style={`--d:${i * 60}ms`}>
-        <div class="offer__main"><h3>{c.name}</h3>{c.note && <p>{c.note}</p>}</div>
-        {c.when && <p class="offer__when"><span class="offer__k">{data.whenLabel?.trim() || ui.when}</span>{c.when}</p>}
-        {c.price && <p class="offer__price"><span class="offer__k">{ui.price}</span>{c.price}</p>}
-      </li>
-    ))}
+    {data.classes.map((c: any, i: number) => {
+      const p = c.price ? splitPrice(c.price) : null;
+      const b = rowCta(c);
+      return (
+        <li class="offer" data-reveal style={`--d:${i * 60}ms`}>
+          <div class="offer__main">
+            <h3>{c.name}</h3>
+            {c.note && <p>{c.note}</p>}
+          </div>
+          <div class="offer__stub">
+            <div class="offer__info">
+            {p && (
+              <p class="offer__price">
+                <span class="offer__k">{ui.price}: </span>
+                {p.lead && <span class="offer__lead">{p.lead}</span>}
+                {p.amount ? <span class="offer__amount">{p.amount}</span> : <span class="offer__text">{p.rest}</span>}
+                {p.amount && p.rest && <span class="offer__rest">{p.rest}</span>}
+              </p>
+            )}
+            {c.when && <p class="offer__when"><span class="offer__wk">{data.whenLabel?.trim() || ui.when}</span>{c.when}</p>}
+            </div>
+            <a class="offer__btn" href={b.href} target={b.ext ? '_blank' : undefined} rel={b.ext ? 'noopener' : undefined}>
+              {b.label}<span aria-hidden="true">{'\u00a0→'}</span><span class="offer__k">: {c.name}</span>
+            </a>
+          </div>
+        </li>
+      );
+    })}
     {data.voucher?.title && (
       <li class="offer offer--voucher" data-reveal>
         <div class="offer__main"><h3>{data.voucher.title}</h3>{data.voucher.text && <p>{data.voucher.text}</p>}</div>
-        {data.voucher.price && <p class="offer__price offer__price--list">{data.voucher.price}</p>}
+        {data.voucher.price && <p class="offer__price--list">{data.voucher.price}</p>}
       </li>
     )}
   </ul>
