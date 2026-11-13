@@ -24,6 +24,13 @@ function splitPrice(p: string) {
   return m ? { lead: m[1] ?? '', amount: m[2].replace(/\s+/g, '\u202f'), rest: m[3] } : { lead: '', amount: '', rest: p };
 }
 const onRequest = /anfrage|request|aufwand|effort/i;
+// Upcoming dates for a row: past ones drop out at build time, and a small script hides
+// any that pass between rebuilds.
+const today = new Date().toISOString().slice(0, 10);
+const fmt = new Intl.DateTimeFormat(locale === 'de' ? 'de-DE' : 'en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+const upcoming = (c: any) => (c.dates ?? []).filter((d: any) => d.date && d.date >= today)
+  .sort((a: any, b: any) => a.date.localeCompare(b.date))
+  .map((d: any) => ({ iso: d.date, label: fmt.format(new Date(d.date + 'T00:00:00Z')) + (d.time?.trim() ? ` · ${d.time.trim()}` : '') }));
 function rowCta(c: any) {
   const request = !!data.ctaHref?.trim() || onRequest.test(c.price ?? '');
   const href = c.ctaHref?.trim() || data.ctaHref?.trim()
@@ -68,6 +75,12 @@ function rowCta(c: any) {
           <div class="offer__main">
             <h3>{c.name}</h3>
             {c.note && <p>{c.note}</p>}
+            {upcoming(c).length > 0 && (
+              <div class="offer__dates">
+                <span class="offer__wk">{ui.nextDates}</span>
+                <ul>{upcoming(c).map((d: any) => <li data-date={d.iso}>{d.label}</li>)}</ul>
+              </div>
+            )}
           </div>
           <div class="offer__stub">
             <div class="offer__info">
@@ -135,3 +148,9 @@ function rowCta(c: any) {
   <p data-reveal style="--d:70ms">{data.ctaText?.trim() || ui.ctaText}</p>
   <a class="btn btn--dark" href={cta} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} data-reveal style="--d:140ms">{data.ctaLabel}</a>
 </section>
+
+<script>
+  const today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll<HTMLElement>('.offer__dates li[data-date]').forEach((li) => { if (li.dataset.date! < today) li.remove(); });
+  document.querySelectorAll('.offer__dates').forEach((box) => { if (!box.querySelector('li')) box.remove(); });
+</script>

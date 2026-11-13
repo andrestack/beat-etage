@@ -11,6 +11,17 @@ classes:
     when: about once a month · usually Saturdays · about 45 min
     price: from €24 for 2 people
     note: At least 1 adult and 1 child. 3 people €33, 4 people €39, each additional person €10.
+    dates: []
+  - name: Workshop projects for nurseries and schools
+    when: by arrangement
+    price: on request
+    note: We bring the drums to your nursery or school, or you come to our room. Send us the key details.
+    ctaHref: mailto:kontakt@beat-etage.de?subject=Workshop%20nursery%20%2F%20school
+  - name: Drum events for kids' parties
+    when: by arrangement
+    price: on request
+    note: "For birthdays, summer and nursery parties: every child drums along."
+    ctaHref: mailto:kontakt@beat-etage.de?subject=Kids%20party
 body: |-
   ## How a session goes
 
@@ -19,10 +30,6 @@ body: |-
   ## Why it works
 
   Children learn most easily by watching and imitating. When parents visibly have fun and join in, the kids pick it up. Some children just watch at the first sessions, and that is perfectly fine.
-
-  ## More for kids
-
-  On request we offer interactive events for kids’ parties and workshop projects for schools and nurseries. Send us an email with the key details.
 
   ## Stay in the loop
 

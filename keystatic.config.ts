@@ -185,6 +185,13 @@ function build() {
         note: fields.text({ label: 'Hinweis', multiline: true }),
         ctaLabel: fields.text({ label: 'Button: Text (leer = Buchen bzw. Anfragen)' }),
         ctaHref: fields.text({ label: 'Button: Link (leer = Buchungs-Link der Seite, bei „auf Anfrage“ E-Mail)' }),
+        dates: fields.array(
+          fields.object({
+            date: fields.date({ label: 'Datum' }),
+            time: fields.text({ label: 'Uhrzeit (optional, z. B. 11:00)' }),
+          }),
+          { label: 'Termine (vergangene werden automatisch ausgeblendet)', itemLabel: (p) => `${p.fields.date.value ?? ''} ${p.fields.time.value}`.trim() },
+        ),
       }),
       { label: 'Angebote', itemLabel: (p) => p.fields.name.value },
     ),
