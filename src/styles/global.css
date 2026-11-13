@@ -251,6 +251,8 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .offer__text { font-size: var(--step-lead); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
 .offer__btn { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: var(--step-small); text-decoration: none; transition: transform 160ms var(--ease-out), background-color 200ms ease; }
 .offer__btn:active { transform: scale(0.97); }
+.offer__go { display: grid; gap: 8px; justify-items: start; }
+.offer__hint { max-width: 26ch; font-size: var(--step-small); line-height: 1.35; color: var(--ink); }
 @media (hover: hover) and (pointer: fine) { .offer__btn:hover { background: var(--soft); } }
 .offer__k { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
@@ -476,6 +478,7 @@ body { overflow-x: clip; }
   .room .prose { margin-top: 20px; }
   .offer { grid-template-columns: 1fr; }
   .offer__stub { grid-auto-flow: column; align-items: end; justify-content: space-between; gap: 16px; border-left: 0; border-top: 2px dashed rgb(64 54 47 / .4); }
+  .offer__stub:has(.offer__hint) { grid-auto-flow: row; justify-content: stretch; align-items: start; }
   .offer__stub::before { top: -13px; left: -12px; }
   .offer__stub::after { top: -13px; bottom: auto; left: auto; right: -12px; }
   .prices { grid-template-columns: 1fr 1fr; }

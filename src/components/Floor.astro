@@ -28,7 +28,7 @@ function rowCta(c: any) {
   const request = !!data.ctaHref?.trim() || onRequest.test(c.price ?? '');
   const href = c.ctaHref?.trim() || data.ctaHref?.trim()
     || (request ? `mailto:${settings.email}?subject=${encodeURIComponent(c.name)}` : cta);
-  return { href, label: c.ctaLabel?.trim() || (request ? ui.enquire : ui.book), ext: href.startsWith('http') };
+  return { href, label: c.ctaLabel?.trim() || (request ? ui.enquire : ui.book), ext: href.startsWith('http'), ev: /eversports\./i.test(href) };
 }
 ---
 <section class={`fl fl--${data.color || 'pine'}`}>
@@ -81,9 +81,12 @@ function rowCta(c: any) {
             )}
             {c.when && <p class="offer__when"><span class="offer__wk">{data.whenLabel?.trim() || ui.when}</span>{c.when}</p>}
             </div>
-            <a class="offer__btn" href={b.href} target={b.ext ? '_blank' : undefined} rel={b.ext ? 'noopener' : undefined}>
-              {b.label}<span aria-hidden="true">{'\u00a0→'}</span><span class="offer__k">: {c.name}</span>
-            </a>
+            <div class="offer__go">
+              <a class="offer__btn" href={b.href} target={b.ext ? '_blank' : undefined} rel={b.ext ? 'noopener' : undefined}>
+                {b.label}<span aria-hidden="true">{'\u00a0→'}</span><span class="offer__k">: {c.name}</span>
+              </a>
+              {b.ev && <p class="offer__hint">{ui.evHint}</p>}
+            </div>
           </div>
         </li>
       );
