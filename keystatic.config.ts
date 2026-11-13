@@ -177,6 +177,7 @@ function build() {
       }),
       { label: 'Preis-Kacheln (optional, über den Angeboten)', itemLabel: (p) => p.fields.label.value },
     ),
+    pricesNote: fields.text({ label: 'Hinweis unter den Preis-Kacheln (optional)', multiline: true }),
     voucher: fields.object(
       {
         title: fields.text({ label: 'Überschrift (leer = kein Kasten)' }),

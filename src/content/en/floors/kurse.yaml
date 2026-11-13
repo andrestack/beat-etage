@@ -22,6 +22,12 @@ classes:
     when: as announced · up to 120 min
     price: ""
     note: "For aspiring professionals: micro-timing, variations on the dunduns and the interplay of soloist, sangban and dundunba."
+  - name: Handpan and cajón
+    when: ""
+    price: ""
+    note: With Alex Streletz. More about him and his classes on the team page.
+    ctaLabel: More about Alex
+    ctaHref: /en/team
 prices:
   - label: Trial class
     price: from €10
@@ -39,12 +45,8 @@ prices:
     price: €30
     note: 30 min · 45 min = €45
     featured: false
-body: |-
-  The classes are led by experienced percussionists who care about the right balance of support and challenge. Private lessons are paid in cash or by bank transfer.
-
-  ## Handpan and cajón
-
-  Alex Streletz teaches group classes for handpan and cajón. More on the team page.
+pricesNote: "The classes are led by experienced percussionists who care about the right balance of support and challenge. Private lessons are paid in cash or by bank transfer."
+body: ""
 ctaLabel: Dates & booking
 ctaHref: ""
 image: ../../../assets/media/en/floors/kurse/image.jpg

@@ -22,6 +22,12 @@ classes:
     when: nach Ankündigung · bis 120 Min.
     price: ""
     note: "Für angehende Profis: Mikrotiming, Variationen an den Dunduns und das Zusammenspiel von Solist, Sangban und Dundunba."
+  - name: Handpan und Cajón
+    when: ""
+    price: ""
+    note: Mit Alex Streletz. Mehr zu ihm und seinen Kursen auf der Team-Seite.
+    ctaLabel: Mehr zu Alex
+    ctaHref: /team
 prices:
   - label: Schnupper-Termin
     price: ab 10 €
@@ -39,12 +45,8 @@ prices:
     price: 30 €
     note: 30 Min. · 45 Min. = 45 €
     featured: false
-body: |-
-  Die Kurse leiten erfahrene Percussionist:innen, denen eine angemessene Balance zwischen Förderung und Forderung wichtig ist. Einzelunterricht zahlst du bar oder per Überweisung.
-
-  ## Handpan und Cajón
-
-  Gruppenunterricht für Handpan und Cajón gibt Alex Streletz. Mehr dazu auf der Team-Seite.
+pricesNote: "Die Kurse leiten erfahrene Percussionist:innen, denen eine angemessene Balance zwischen Förderung und Forderung wichtig ist. Einzelunterricht zahlst du bar oder per Überweisung."
+body: ""
 ctaLabel: Termine & Buchung
 ctaHref: ""
 image: ../../../assets/media/de/floors/kurse/image.jpg

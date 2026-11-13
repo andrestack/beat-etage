@@ -50,6 +50,7 @@ function rowCta(c: any) {
       ))}
     </ul>
   )}
+  {data.pricesNote?.trim() && <p class="prices__note" data-reveal>{data.pricesNote}</p>}
   <ul class="offers__list">
     {data.classes.map((c: any, i: number) => {
       const p = c.price ? splitPrice(c.price) : null;
