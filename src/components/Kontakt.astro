@@ -3,7 +3,7 @@ import Pic from './Pic.astro';
 import FloorStrip from './FloorStrip.astro';
 import { md } from '../lib/md';
 import { t } from '../lib/i18n';
-import type { Locale } from '../lib/content';
+import { href, type Locale } from '../lib/content';
 interface Props { data: any; settings: any; locale: Locale; floors: { slug: string; entry: any }[] }
 const { data, settings, locale, floors } = Astro.props;
 const ui = t(locale);
@@ -32,5 +32,6 @@ const tel = settings.phone.replace(/[^\d+]/g, '').replace(/^0/, '+49');
 <section class="room">
   <h2 data-reveal>{data.roomTitle}</h2>
   <div class="prose" data-reveal style="--d:90ms" set:html={md(data.roomText)} />
+  <a class="link" href={href(locale, '/raum')} data-reveal style="--d:140ms">{ui.rentRoom}<span aria-hidden="true">→</span></a>
 </section>
-<FloorStrip floors={floors} locale={locale} title={ui.allFloors} />
+<FloorStrip floors={floors} locale={locale} title={ui.allFloors} exclude="raum" />

@@ -1,0 +1,24 @@
+title: Rent the room
+color: pine
+label: Halle 19
+seo:
+  title: "Room rental in Berlin-Treptow: percussion room in Halle 19"
+  description: Rent our percussion room in Halle 19, Berlin-Treptow, for rehearsals, workshops, classes and seminars.
+intro: Our room in Halle 19 is available to rent, for rehearsals, workshops, classes or seminars.
+imageAlt: The room in Halle 19 with shelves full of djembes and dunduns, a light carpet and large windows
+classes:
+  - name: Room rental
+    when: by arrangement
+    price: price on request
+    note: By the hour, for a full day or on a regular basis. Tell us what you have in mind and we'll get back to you with an offer.
+body: |-
+  ## The room
+
+  Acoustic foam on the walls, lots of wood, daylight and shelves full of drums: the room is built for loud music and still feels cosy.
+
+  Details on size, equipment and rental prices are coming soon. Until then, just write to us.
+ctaTitle: Need a room for your rehearsal?
+ctaText: Tell us briefly when and what you need the room for. We'll get back to you with an offer.
+ctaLabel: Enquire about the room
+ctaHref: mailto:kontakt@beat-etage.de?subject=Room%20rental
+image: ../../../assets/media/en/floors/raum/image.jpg

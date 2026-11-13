@@ -1,0 +1,24 @@
+title: Raum mieten
+color: pine
+label: Halle 19
+seo:
+  title: "Raum mieten in Berlin-Treptow: Percussionraum in Halle 19"
+  description: Unseren Percussionraum in Halle 19 in Berlin-Treptow kannst du für Proben, Workshops, Kurse und Seminare mieten.
+intro: Unseren Raum in Halle 19 kannst du mieten, für Proben, Workshops, Kurse oder Seminare.
+imageAlt: Der Raum in Halle 19 mit Regalen voller Djembes und Dunduns, hellem Teppich und großen Fenstern
+classes:
+  - name: Raummiete
+    when: nach Absprache
+    price: Preis auf Anfrage
+    note: Stundenweise, für einen ganzen Tag oder regelmäßig. Schreib uns, was du vorhast, dann melden wir uns mit einem Angebot.
+body: |-
+  ## Der Raum
+
+  Akustikschaumstoff an den Wänden, viel Holz, Tageslicht und Regale voller Trommeln: Der Raum ist für laute Musik gemacht und trotzdem gemütlich.
+
+  Mehr zu Größe, Ausstattung und Mietpreisen folgt in Kürze. Bis dahin schreib uns einfach.
+ctaTitle: Raum für deine Probe?
+ctaText: Schreib uns kurz, wann und wofür du den Raum brauchst. Wir melden uns mit einem Angebot.
+ctaLabel: Raum anfragen
+ctaHref: mailto:kontakt@beat-etage.de?subject=Raumanfrage
+image: ../../../assets/media/de/floors/raum/image.jpg
