@@ -96,6 +96,12 @@ h3 { font-weight: 500; font-size: var(--step-lead); line-height: 1.15; letter-sp
 .hdr__nav { display: flex; gap: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--soft); }
 .hdr__nav a { white-space: nowrap; padding: 6px 0; text-decoration: underline; text-decoration-thickness: 0.28em; text-underline-offset: 0.18em; text-decoration-color: transparent; transition: text-decoration-color 0.3s var(--ease); }
 .hdr__nav a:hover, .hdr__nav a[aria-current] { text-decoration-color: var(--yellow); }
+/* "Über uns" holds Team and Raum: opens on hover or keyboard focus; the parent link still goes to /team. */
+.hdr__drop { position: relative; }
+.hdr__sub { position: absolute; top: 100%; left: -18px; display: grid; min-width: 190px; padding: 10px 18px; margin-top: 8px; background: var(--bg); border-radius: calc(var(--r) * .7); box-shadow: 0 12px 28px rgb(64 54 47 / .16); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out), visibility 0s 160ms; }
+.hdr__sub::before { content: ''; position: absolute; left: 0; right: 0; top: -12px; height: 12px; } /* keeps hover alive across the gap */
+.hdr__sub a { padding: 8px 0; }
+.hdr__drop:hover .hdr__sub, .hdr__drop:focus-within .hdr__sub { opacity: 1; visibility: visible; transform: none; transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out); }
 .hdr__lang { position: relative; display: inline-grid; place-items: center; height: 36px; padding: 0 13px; border: 2px solid var(--ink); border-radius: 999px; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; transition: transform 160ms var(--ease-out), background-color 200ms ease; }
 .hdr__lang::after { content: ''; position: absolute; inset: -6px -4px; } /* 48px tap target around a 36px pill */
 .hdr__lang:active { transform: scale(0.96); }

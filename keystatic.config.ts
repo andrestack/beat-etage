@@ -32,7 +32,17 @@ function build() {
       schema: {
         siteName: fields.text({ label: 'Name' }),
         tagline: fields.text({ label: 'Untertitel (z. B. handmade polyrhythm)' }),
-        nav: fields.array(link('Link'), { label: 'Navigation', itemLabel: (p) => p.fields.label.value }),
+        nav: fields.array(
+          fields.object(
+            {
+              label: fields.text({ label: 'Text' }),
+              href: fields.text({ label: 'Link' }),
+              items: fields.array(link('Unterpunkt'), { label: 'Unterpunkte (Aufklappmenü, optional)', itemLabel: (p) => p.fields.label.value }),
+            },
+            { label: 'Link' },
+          ),
+          { label: 'Navigation', itemLabel: (p) => p.fields.label.value },
+        ),
         cta: link('Button in der Kopfzeile'),
         booking: fields.object(
           {

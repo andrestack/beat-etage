@@ -13,6 +13,11 @@ nav:
     href: /auftritte
   - label: Über uns
     href: /team
+    items:
+      - label: Team
+        href: /team
+      - label: Raum mieten
+        href: /raum
   - label: Kontakt
     href: /kontakt
 cta:

@@ -13,7 +13,14 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
 <header class="hdr">
   <a class="hdr__brand" href={href(locale, '/')} aria-label={`${settings.siteName}: ${ui.home}`}><span class="logo hdr__logo" aria-hidden="true"></span></a>
   <nav class="hdr__nav" aria-label="Hauptnavigation">
-    {settings.nav.map((n: any) => (
+    {settings.nav.map((n: any) => n.items?.length ? (
+      <div class="hdr__drop">
+        <a href={href(locale, n.href)} aria-current={[n, ...n.items].some((x: any) => here(x.href)) ? 'page' : undefined}>{n.label}</a>
+        <div class="hdr__sub">
+          {n.items.map((s: any) => <a href={href(locale, s.href)} aria-current={here(s.href) ? 'page' : undefined}>{s.label}</a>)}
+        </div>
+      </div>
+    ) : (
       <a href={href(locale, n.href)} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a>
     ))}
   </nav>
@@ -24,7 +31,9 @@ const book = settings.booking.url ? bookingHref(settings) : href(locale, setting
   <details class="hdr__menu">
     <summary>{ui.menu}</summary>
     <div class="hdr__sheet">
-      {settings.nav.map((n: any) => <a href={href(locale, n.href)}>{n.label}</a>)}
+      {settings.nav.map((n: any) => n.items?.length
+        ? [<a href={href(locale, n.href)}>{n.label}</a>, ...n.items.filter((s: any) => s.href !== n.href).map((s: any) => <a href={href(locale, s.href)}>{s.label}</a>)]
+        : <a href={href(locale, n.href)}>{n.label}</a>)}
     </div>
   </details>
 </header>
